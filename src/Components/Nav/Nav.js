@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './nav.css'
+import ProfileLogo from '../../images/profile-logo.png';
+import './nav.css';
 
 const Nav = () => {
 	return (
@@ -10,9 +11,11 @@ const Nav = () => {
 					<h1>EarthBFF</h1>
 				</Link>
 				<nav>
-					<Link to='/calculator'>Carbon Footprint Calculator</Link>
-					<Link to='/resources'>Resources</Link>
-					<Link to='/about'>About</Link>
+					<Link to='/learn'>Learn</Link>
+					<Link to='/community'>Community</Link>
+					<Link to='/login'>
+						<img className='profile-img' src={ProfileLogo} />
+					</Link>
 				</nav>
 			</header>
 		</div>

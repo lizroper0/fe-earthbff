@@ -1,18 +1,39 @@
 import React from 'react';
-import EarthBFFLogo from '../../images/woman-and-earth.png'
+import EarthBFFLogo from '../../images/woman-and-earth.png';
+import './home.css';
 
 const Home = () => {
-    return (
-			<div>
-				<h1> We've only got one Earth, so let's treat it like our BFF.</h1>
-				<img className='home-image' src={EarthBFFLogo} alt='' />
-				<h3>
-					Our mission at EarthBFF is to provide education about how your everday
-					actions translate affect carbon emmissions, and provide simple
-					actionable steps to help you become a better friend to the Earth.
-				</h3>
+	return (
+		<section>
+			<div className='home'>
+				<div className='tag-line-container'>
+					<div className='tag-line'> There is only ONE.</div>
+					<div className='tag-line'> Treat it like your BFF.</div>
+				</div>
+				<div className='home-image'>
+					<img src={EarthBFFLogo} alt='EarthBFFLogo' />
+				</div>
+				<div className='home-button-container'>
+					<button className='home-button' href='#learn'>
+						Learn More
+					</button>
+					<button className='home-button' href='#community'>
+						Join Our Community
+					</button>
+				</div>
+
+				<div id='learn'>
+
+					Leanrlksjfgsdhgdlkgdsljgkl;sdf
+
+
+				</div>
+				<div id='community'>
+					fdksghjlkdfsgsdfjgksldf
+				</div>
 			</div>
-		);
+		</section>
+	);
 };
 
 export default Home;

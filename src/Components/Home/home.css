@@ -1,0 +1,49 @@
+.home {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: auto;
+	padding: 1rem;
+	align-content: center;
+	justify-items: center;
+	padding-bottom: 5rem;
+}
+
+.home-image {
+	grid-row: 1;
+	grid-column: 2;
+	
+}
+
+.home-image img {
+	width: 50vw;
+}
+
+.tag-line-container {
+	grid-row: 1;
+	grid-column: 1;
+	display: grid;
+	width: 50vw;
+	font-family: 'Chelsea Market', cursive;
+	align-content: center;
+	justify-items: center;
+}
+
+.tag-line {
+	font-size: 50px;
+	align-self: center;
+}
+
+.home-button-container {
+	grid-column: 1 / span 2;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.home-button {
+	width: 200px;
+	flex-basis: auto;
+	margin: 25px 1.5rem;
+}
