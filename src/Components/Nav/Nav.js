@@ -10,7 +10,7 @@ const Nav = () => {
 					<h1>EarthBFF</h1>
 				</Link>
 				<nav>
-					<Link to='/learn'>Learn</Link>
+					<Link to='/calculator'>Calculator</Link>
 					<Link to='/community'>Community</Link>
 					<Link to='/login'>
 						<img className='profile-img' src={ProfileLogo} alt='EarthBFFLogo' />
