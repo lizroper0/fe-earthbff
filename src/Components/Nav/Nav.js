@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProfileLogo from '../../images/profile-logo.png';
-import './nav.css';
+import './nav.scss';
 
 const Nav = () => {
 	return (
-		<div>
-			<header>
+			<div className='navbar'>
 				<Link to='/'>
 					<h1>EarthBFF</h1>
 				</Link>
@@ -14,11 +13,10 @@ const Nav = () => {
 					<Link to='/learn'>Learn</Link>
 					<Link to='/community'>Community</Link>
 					<Link to='/login'>
-						<img className='profile-img' src={ProfileLogo} />
+						<img className='profile-img' src={ProfileLogo} alt='EarthBFFLogo' />
 					</Link>
 				</nav>
-			</header>
-		</div>
+			</div>
 	);
 };
 

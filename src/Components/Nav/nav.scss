@@ -1,0 +1,60 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: black;
+	background-color: $green;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+	height: 75px;
+}
+
+.navbar a {
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	padding: 0.5rem 1rem 0rem 0rem;
+	transition: all 300ms ease;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar nav a:hover {
+	
+	text-decoration: underline;
+}
+
+.navbar h1 a:hover {
+	text-decoration: none;
+}
+
+.navbar h1 {
+	margin: 0;
+	padding: 0.5rem;
+	color: black;
+	font-family: 'Chelsea Market', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+.profile-img {
+	width: 22px;
+	height: auto;
+}
+
+/* Add Media Queries Here */
+@media only screen and (max-width: 700px) {
+	body {
+		font-size: 1em;
+	}
+	.navbar h1 {
+		font-size: 20px;
+	}
+}
