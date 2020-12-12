@@ -1,3 +1,107 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+//Start Page
+.start-container {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.start-button {
+	display: block;
+	// box-sizing: border-box;
+	width: 300px;
+	// appearance: none;
+	background-color: transparent;
+	border: 3px solid $green;
+	border-radius: 0.6em;
+	color: $green;
+	cursor: pointer;
+	// display: flex;
+	// align-self: center;
+	font-size: 1rem;
+	line-height: 1;
+	margin: 30px;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	// text-trasform: uppercase;
+	font-weight: 700;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 40px 40px $green inset;
+		color: #fff;
+		outline: 0;
+	}
+}
+
+// Carbon Footprint Calculator
+
 .calculator-container {
-	margin: 100px 0 0 0;
+	margin-top: 100px;
+}
+
+.calculator-container h1 {
+	text-align: center;
+}
+
+.calculator-container h5 {
+	text-align: right;
+	margin: 0 100px;
+}
+
+.question-text {
+	color: black;
+	text-align: center;
+	max-width: 500px;
+	margin: 10px auto;
+	font-size: 20px;
+}
+
+.question-description {
+	text-align: center;
+	max-width: 800px;
+	margin: auto;
+}
+
+.response-section {
+	text-align: center;
+	margin: auto;
+}
+
+.response-button {
+	display: block;
+	// box-sizing: border-box;
+	width: 300px;
+	// appearance: none;
+	background-color: transparent;
+	border: 3px solid $green;
+	border-radius: 0.6em;
+	color: $green;
+	cursor: pointer;
+	// display: flex;
+	// align-self: center;
+	font-size: 1rem;
+	line-height: 1;
+	margin: 30px;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	// text-trasform: uppercase;
+	font-weight: 700;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 40px 40px $green inset;
+		color: #fff;
+		outline: 0;
+	}
+}
+
+//Results Page
+.results-container {
+	margin-top: 100px;
+	text-align: center;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NumberFormat from 'react-number-format';
 import './calculator.scss';
 
 const quiz = [
@@ -176,7 +177,10 @@ const quiz = [
 
 const Calculator = () => {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
-	//const [carbonFootprint, setCarbonFootprint] = useState(0);
+	const [carbonFootprint, setCarbonFootprint] = useState(0);
+	const [showStart, setShowStart] = useState(true);
+	const [showQuestions, setShowQuestions] = useState(false);
+	const [showResults, setShowResults] = useState(false);
 
 	// useEffect(() => {
 	// 	fetch(quiz)
@@ -193,26 +197,90 @@ const Calculator = () => {
 	// if (!currentQuestion) {
 	// 	return null;
 	// }
-	const handleResponseClick = (response) => {
+
+	const handleStart = () => {
+		setShowStart(false);
+		setShowQuestions(true);
+	};
+
+
+
+	const handleResponseClick = (carbon_output) => {
 		const nextQuestion = currentQuestion + 1;
-		setCurrentQuestion(nextQuestion);
+		const newCarbonFootprint = carbonFootprint + carbon_output;
+		setCarbonFootprint(newCarbonFootprint);
+
+		if (nextQuestion < quiz.length) {
+			setCurrentQuestion(nextQuestion);
+			setCarbonFootprint(newCarbonFootprint);
+		} else {
+			setShowQuestions(false)
+			setShowResults(true)
+		}
 	};
 
 	return (
-		<div className='calculator-container'>
-			<h1>Carbon Footprint Calculator</h1>
-			<div className='question-text'>{quiz[currentQuestion].label}</div>
-			<div className='question-description'>
-				{quiz[currentQuestion].description}
+		<div>
+			<div
+				className='start-container'
+				style={{ display: showStart ? 'block' : 'none' }}>
+				<h1>Carbon Footprint Calculator Start Page</h1>
+				<h5>
+					add instructions, background and define terms realted to the
+					calculator
+				</h5>
+
+				<button className='start-button' onClick={() => handleStart()}>
+					Start Calculator
+				</button>
 			</div>
-			<div className='answer-section'>
-				{quiz[currentQuestion].responses.map((response) => (
-					<button
-						onClick={() => handleResponseClick()}
-						key={response.carbon_output}>
-						{response.label}
-					</button>
-				))}
+
+			<div
+				className='calculator-container'
+				style={{ display: showQuestions ? 'block' : 'none' }}>
+				<h1>Carbon Footprint Calculator</h1>
+				<h5>
+					Carbon Footprint: <br></br>
+					<NumberFormat
+						value={carbonFootprint}
+						displayType={'text'}
+						thousandSeparator={true}
+					/>{' '}
+					lbs CO2e/year
+				</h5>
+				<div className='question-text'>{quiz[currentQuestion].label}</div>
+				<div className='question-description'>
+					{quiz[currentQuestion].description}
+				</div>
+				<div className='response-section'>
+					{quiz[currentQuestion].responses.map((response) => (
+						<button
+							className='response-button'
+							onClick={() => handleResponseClick(response.carbon_output)}
+							key={response.carbon_output}>
+							{response.label}
+						</button>
+					))}
+				</div>
+			</div>
+
+			<div
+				className='results-container'
+				style={{ display: showResults ? 'block' : 'none' }}>
+				<h1>Results</h1>
+				<h5>
+					Carbon Footprint: <br></br>
+					<NumberFormat
+						value={carbonFootprint}
+						displayType={'text'}
+						thousandSeparator={true}
+					/>{' '}
+					lbs CO2e/year
+				</h5>
+				<h5>
+					The average person has this carbon footprint, that his is what you
+					have...
+				</h5>
 			</div>
 		</div>
 	);
