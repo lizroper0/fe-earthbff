@@ -28,43 +28,45 @@ const Home = () => {
 					<div>
 						<h2 id='learn'>What is EarthBFF?</h2>
 						<h5>
-							EarthBFF is a a space for learning and community based around the
+							EarthBFF is a placefor learning and community based around the
 							idea of treating the Earth like your best friend. The two main
-							fixtures of our space is the carbon calculator and the community
-							bulletin board. Our mission at EarthBFF is to provide education
-							about how your everday actions translate into carbon emmissions,
-							and provide simple actionable steps and a caring community to help
-							you become a better friend to the Earth.
+							fixtures of our space is the carbon footprint calculator and the
+							community bulletin board. Our mission at EarthBFF is to provide
+							education about how our everday actions translate into carbon
+							emmissions, and provide simple actionable steps and a caring
+							community to help you become a better friend to the Earth by
+							reducing these carbon emissions.
 						</h5>
 					</div>
 					<div>
 						<h2>What is a carbon footprint and why should I care about it?</h2>
 						<h5>
-							Excellent question, I am so glad you asked! A carbon footprint is
-							the amount of carbon dioxide and other carbon compounds emitted
-							due to the consumption of fossil fuels. By understanding your
-							personal carbon footprint you can adjust your lifestlye in a way
-							that reduces the amout of these bad compounds, resulting in a
-							healthier Earth.
+							Excellent question, I am so glad you asked! A person's carbon
+							footprint is the amount of carbon dioxide and other carbon
+							compounds emitted due to the consumption of fossil fuels. By
+							understanding your personal carbon footprint you can adjust your
+							lifestlye in a way that reduces the amout of these bad compounds
+							you are creating, resulting in a healthier Earth.
 						</h5>
 					</div>
 
 					<div>
 						<h2>How is my carbon footprint related to climate change?</h2>
 						<h5>
-							Simply put, global climate change in temperature and rainfull.
-							This doesn't sound so scary, but climate change is causing the
-							Earth to warm up resulting in melting glaciers, rising sea levels,
-							and changes in severity and frequency of natural disasters.
-							Climate change is caused by all of the carbon emissions and
-							greenhouse gases that are largely created by humans activities.
+							Simply put, global climate change is an alteration in the Earth's
+							average temperature and rainfall. This doesn't sound so scary, but
+							climate change is causing the Earth to warm up resulting in
+							melting glaciers, rising sea levels, and changes in severity and
+							frequency of natural disasters. Climate change is caused by all of
+							the carbon emissions and greenhouse gases that are largely created
+							by humans activities.
 						</h5>
 					</div>
 					<div>
 						<h2>Explain Green House Gases (GHG's) Please!</h2>
 						<h5>
-							GHG's are are gases such as Carbon dioxide, Methane, Nitrous
-							oxide, and Flourinated gases that trap heat in the atmosphere ,
+							GHG's are are gases such as carbon dioxide, methane, nitrous
+							oxide, and flourinated gases that trap heat in the atmosphere,
 							ultimately causing the earth to warm up. An earth that is too warm
 							can have many negative consquences. These gases are largely
 							created from the production of and burning of fossil fuels like
