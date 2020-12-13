@@ -203,8 +203,6 @@ const Calculator = () => {
 		setShowQuestions(true);
 	};
 
-
-
 	const handleResponseClick = (carbon_output) => {
 		const nextQuestion = currentQuestion + 1;
 		const newCarbonFootprint = carbonFootprint + carbon_output;
@@ -238,7 +236,6 @@ const Calculator = () => {
 			<div
 				className='calculator-container'
 				style={{ display: showQuestions ? 'block' : 'none' }}>
-				<h1>Carbon Footprint Calculator</h1>
 				<h5>
 					Carbon Footprint: <br></br>
 					<NumberFormat
