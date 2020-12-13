@@ -53,6 +53,11 @@ $blue: #9cd7f3;
 	align-items: baseline;
 }
 
+.home-button-container a {
+	width: 300px;
+	margin: auto 50px;
+	text-align: center;
+}
 .home-button {
 	box-sizing: border-box;
 	width: 300px;
@@ -62,15 +67,12 @@ $blue: #9cd7f3;
 	border-radius: 0.6em;
 	color: $green;
 	cursor: pointer;
-	display: flex;
-	align-self: center;
 	font-size: 1rem;
 	line-height: 1;
 	margin: auto 50px;
 	padding: 1.2em 2.8em;
 	text-decoration: none;
 	text-align: center;
-	// text-trasform: uppercase;
 	font-weight: 700;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 
@@ -82,10 +84,23 @@ $blue: #9cd7f3;
 }
 
 .section-container {
-	height: 100vh;
 	display: grid;
 	max-width: 1200px;
-	padding: 1rem;
+	margin-bottom: 100px;
+	height: auto;
+	
+}
+
+.section-container h2 {
+	max-width: 1200px;
+	font-family: 'Chelsea Market', cursive;
+	margin-top: 35px;
+	margin-bottom: 10px;
+}
+
+.section-container h5 {
+	max-width: 1200px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Add Media Queries Here */

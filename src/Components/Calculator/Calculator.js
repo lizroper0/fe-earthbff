@@ -212,8 +212,8 @@ const Calculator = () => {
 			setCurrentQuestion(nextQuestion);
 			setCarbonFootprint(newCarbonFootprint);
 		} else {
-			setShowQuestions(false)
-			setShowResults(true)
+			setShowQuestions(false);
+			setShowResults(true);
 		}
 	};
 
@@ -222,11 +222,27 @@ const Calculator = () => {
 			<div
 				className='start-container'
 				style={{ display: showStart ? 'block' : 'none' }}>
-				<h1>Carbon Footprint Calculator Start Page</h1>
+				<h1>Carbon Footprint Calculator</h1>
 				<h5>
-					add instructions, background and define terms realted to the
-					calculator
+					The first step to living a more sustainable life and being a better
+					friend to the Earth is to understand how your current lifestyle
+					choices affect climate change.
 				</h5>
+				<h5>
+					A good way to measure your affect on climate change is your carbon
+					footprint.
+				</h5>
+				<h5>
+					A person's carbon footprint is the amount of carbon dioxide and other
+					carbon compounds emitted due to the consumption of fossil fuels. By
+					understnading your personal carbon footprint you can adjust your
+					lifestlye in a way that reduces the amount of these bad compounds that
+					you generate.
+				</h5>
+				<h5>
+					Carbon footprints are measured in Carbon Dioxide Equivalents (C02e) which is just a way of converting all greenhouse gases to be measured in C02.
+				</h5>
+				<h5>Are you ready to get started?</h5>
 
 				<button className='start-button' onClick={() => handleStart()}>
 					Start Calculator

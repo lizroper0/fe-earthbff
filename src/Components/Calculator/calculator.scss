@@ -6,28 +6,35 @@ $blue: #9cd7f3;
 .start-container {
 	margin-top: 100px;
 	text-align: center;
+}
 
+.start-container h1 {
+	margin: 50px;
+	text-align: center;
+	font-family: 'Chelsea Market', cursive;
+}
+
+
+.start-container h5 {
+	margin: 50px;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .start-button {
 	display: block;
-	// box-sizing: border-box;
 	width: 300px;
-	// appearance: none;
 	background-color: transparent;
 	border: 3px solid $green;
 	border-radius: 0.6em;
 	color: $green;
 	cursor: pointer;
-	// display: flex;
-	// align-self: center;
 	font-size: 1rem;
 	line-height: 1;
-	margin: auto;
+	margin: 50px auto;
 	padding: 1.2em 2.8em;
 	text-decoration: none;
 	text-align: center;
-	// text-trasform: uppercase;
 	font-weight: 700;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 

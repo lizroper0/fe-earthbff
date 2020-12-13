@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import EarthBFFLogo from '../../images/woman-and-earth.png';
 import './home.scss';
 
@@ -14,40 +15,51 @@ const Home = () => {
 					<img src={EarthBFFLogo} alt='EarthBFFLogo' />
 				</div>
 				<div className='home-button-container'>
-					<button className='home-button' href='#learn'>
-						Learn More
-					</button>
-					<button className='home-button' href='#community'>
-						Join Our Community
-					</button>
+					<a href='#learn'>
+						<button className='home-button'>Learn More</button>
+					</a>
+					<Link to='/login'>
+						<button className='home-button'>Join Our Community</button>
+					</Link>
 				</div>
 			</div>
-
-			<div id='learn' className='section-container'>
+			<div className='section-container'>
 				<div>
 					<div>
-						<h2>What is EarthBFF?</h2>
+						<h2 id='learn'>What is EarthBFF?</h2>
 						<h5>
 							EarthBFF is a a space for learning and community based around the
-							idea of treating the Earth like our best friend. The two main
+							idea of treating the Earth like your best friend. The two main
 							fixtures of our space is the carbon calculator and the community
 							bulletin board. Our mission at EarthBFF is to provide education
-							about how your everday actions translate affect carbon emmissions,
-							and provide simple actionable steps to help you become a better
-							friend to the Earth.
+							about how your everday actions translate into carbon emmissions,
+							and provide simple actionable steps and a caring community to help
+							you become a better friend to the Earth.
 						</h5>
 					</div>
 					<div>
 						<h2>What is a carbon footprint and why should I care about it?</h2>
 						<h5>
-							Excellent question, I am so glad you asked! the amount of carbon
-							dioxide and other carbon compounds emitted due to the consumption
-							of fossil fuels. By understnading your personaly carbon footprint
-							you can adjust yourr lifestlye in a way that reduces the amout of
-							these bad compounds.
+							Excellent question, I am so glad you asked! A carbon footprint is
+							the amount of carbon dioxide and other carbon compounds emitted
+							due to the consumption of fossil fuels. By understanding your
+							personal carbon footprint you can adjust your lifestlye in a way
+							that reduces the amout of these bad compounds, resulting in a
+							healthier Earth.
 						</h5>
 					</div>
 
+					<div>
+						<h2>How is my carbon footprint related to climate change?</h2>
+						<h5>
+							Simply put, global climate change in temperature and rainfull.
+							This doesn't sound so scary, but climate change is causing the
+							Earth to warm up resulting in melting glaciers, rising sea levels,
+							and changes in severity and frequency of natural disasters.
+							Climate change is caused by all of the carbon emissions and
+							greenhouse gases that are largely created by humans activities.
+						</h5>
+					</div>
 					<div>
 						<h2>Explain Green House Gases (GHG's) Please!</h2>
 						<h5>
@@ -61,17 +73,26 @@ const Home = () => {
 					</div>
 					<div>
 						<h2>How can I be a better friend to the Earth?</h2>
-						<h5>Educate yourself! Head to our resources page to learn more.</h5>
-						<h5>Join our community and share sustainbility tips or offer support
-							to a fellow EarthBFF.
-						</h5>
-						<h5>
-							Make conscious choices about your lifestyle and consumption.
-							Believe me, I know it is really hard to hold yourself accountable
-							to reducing your carbon footprint since you are just one person
-							out of 8 billion. Let me ask you this - what happens when everyone
-							operates with this mentality?
-						</h5>
+
+						<ul>
+							<li>
+								<h5>
+									Educate yourself! Head to our{' '}
+									<Link to='/resources'>resources</Link> page to learn more.
+								</h5>
+							</li>
+							<li>
+								<h5>
+									Make conscious choices about your lifestyle and consumption.
+								</h5>
+							</li>
+							<li>
+								<h5>
+									Join our community and share sustainbility tips or offer
+									support to a fellow EarthBFF.
+								</h5>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
