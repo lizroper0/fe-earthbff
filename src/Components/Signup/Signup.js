@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './signup.scss';
 
-import Axios from 'axios';
+import axios from 'axios';
 
 const Signup = () => {
 	const [user, setUser] = useState({
@@ -14,12 +14,14 @@ const Signup = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		Axios({
+		axios({
 			method: 'POST',
 			url: 'http://localhost:8000/users/',
 			data: user,
-		});
-	}
+		}).then((res)=> {
+			console.log(res)
+		})
+	};
 
 	const handleChange = (event) => {
 		event.preventDefault();
@@ -30,7 +32,7 @@ const Signup = () => {
 		<div className='signup-page'>
 			<div className='signup-container'>
 				<div className='signup-form-container'>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<label htmlFor='email'>
 							<b>Email</b>
 						</label>
@@ -39,8 +41,7 @@ const Signup = () => {
 							name='email'
 							value={user.email}
 							onChange={handleChange}
-							placeholder='user@example.com'
-							></input>
+							placeholder='user@example.com'></input>
 						<label htmlFor='username'>
 							<b>Username</b>
 						</label>
@@ -69,7 +70,7 @@ const Signup = () => {
 							onChange={handleChange}
 							placeholder='Re-Type Password'></input>
 
-						<button type='submit' onSubmit={handleSubmit}>
+						<button type='submit'>
 							Sign Up
 						</button>
 					</form>
