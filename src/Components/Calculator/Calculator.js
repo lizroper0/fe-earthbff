@@ -177,10 +177,9 @@ import './calculator.scss';
 
 const calculatorUrl = 'http://localhost:8000/questions/';
 
-const Calculator = () => {
+const Calculator = ({ carbonFootprint, setCarbonFootprint }) => {
 	const [calculator, setCalculator] = useState();
 	const [currentQuestion, setCurrentQuestion] = useState(0);
-	const [carbonFootprint, setCarbonFootprint] = useState(0);
 	const [showStart, setShowStart] = useState(true);
 	const [showQuestions, setShowQuestions] = useState(false);
 	const [showResults, setShowResults] = useState(false);

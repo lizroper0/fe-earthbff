@@ -4,12 +4,10 @@ import './login.scss';
 
 import { Link } from 'react-router-dom';
 
-const Login = ({ setToken, setLoggedIn, loggedIn }) => {
+const Login = ({  }) => {
 	const [user, setUser] = useState({
 		email: '',
-		username: '',
 		password: '',
-		re_password: '',
 	});
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -17,7 +15,10 @@ const Login = ({ setToken, setLoggedIn, loggedIn }) => {
 			method: 'POST',
 			url: 'http://localhost:8000/token/login',
 			data: user,
-		});
+		}).then((res)=> {
+			console.log(res.data.auth_token)
+			localStorage.setItem(res.data.auth_token);
+		})
 	};
 
 	const handleChange = (event) => {

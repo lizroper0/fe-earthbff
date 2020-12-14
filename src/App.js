@@ -11,7 +11,7 @@ import Signup from './Components/Signup/Signup';
 import Resources from './Components/Resources/Resources';
 
 function App() {
-	const [calculator, setCalculator] = useState();
+	const [carbonFootprint, setCarbonFootprint] = useState(0);
 	const [token, setToken] = useState(null);
 	const [loggedIn, setLoggedIn] = useState(false);
 
@@ -24,7 +24,7 @@ function App() {
 					exact
 					path='/calculator'
 					render={() => (
-						<Calculator calculator={calculator} setCalculator={setCalculator} />
+						<Calculator carbonFootprint={carbonFootprint} setCarbonFootprint={setCarbonFootprint} />
 					)}
 				/>
 				<Route
