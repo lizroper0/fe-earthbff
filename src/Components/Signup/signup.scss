@@ -1,0 +1,54 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+.signup-page {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	color: black;
+}
+
+input[type=email], [type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.signup-container {
+	grid-column: 2;
+	grid-row: 2;
+	display: grid;
+	border-color: black;
+	border: solid;
+	border-radius: 15px;
+	background-color: white;
+}
+
+.signup-form-container {
+	margin: auto;
+	padding-bottom: 50px;
+}
+
+.button {
+	color: #004225;
+}
+
+p {
+	padding: 10px 0 10px 0;
+}
+
+p a:link,
+a:visited {
+	text-decoration: none;
+}
+p a:hover,
+a:visited:hover {
+	color: blue;
+	text-decoration: underline;
+}

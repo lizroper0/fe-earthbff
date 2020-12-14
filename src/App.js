@@ -11,7 +11,10 @@ import Signup from './Components/Signup/Signup';
 import Resources from './Components/Resources/Resources';
 
 function App() {
-	const [calculator, setCalculator] = useState([]);
+	const [calculator, setCalculator] = useState();
+	const [token, setToken] = useState(null);
+	const [loggedIn, setLoggedIn] = useState(false);
+
 	return (
 		<div>
 			<Nav />
@@ -24,9 +27,31 @@ function App() {
 						<Calculator calculator={calculator} setCalculator={setCalculator} />
 					)}
 				/>
-				<Route exact path='/login' render={() => <Login />} />
-				<Route exact path='/signup' render={() => <Signup />} />
-				{/* <Route exact path='/resources' render={() => <Resources />} /> */}
+				<Route
+					exact
+					path='/login'
+					render={() => (
+						<Login
+							token={token}
+							setToken={setToken}
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+						/>
+					)}
+				/>
+				<Route
+					exact
+					path='/signup'
+					render={() => (
+						<Signup
+							token={token}
+							setToken={setToken}
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+						/>
+					)}
+				/>
+				<Route exact path='/resources' render={() => <Resources />} />
 			</main>
 			<footer>
 				<p>&copy; 2020 Lucky Lizard Technologies</p>
