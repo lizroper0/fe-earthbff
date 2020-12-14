@@ -5,7 +5,7 @@ import './signup.scss';
 import axios from 'axios';
 
 const Signup = () => {
-	const [user, setUser] = useState({
+	const [newUser, setNewUser] = useState({
 		email: '',
 		username: '',
 		password: '',
@@ -17,7 +17,7 @@ const Signup = () => {
 		axios({
 			method: 'POST',
 			url: 'http://localhost:8000/users/',
-			data: user,
+			data: newUser,
 		}).then((res)=> {
 			console.log(res)
 		})
@@ -25,7 +25,7 @@ const Signup = () => {
 
 	const handleChange = (event) => {
 		event.preventDefault();
-		setUser({ ...user, [event.target.name]: event.target.value });
+		setNewUser({ ...newUser, [event.target.name]: event.target.value });
 	};
 
 	return (
@@ -39,7 +39,7 @@ const Signup = () => {
 						<input
 							type='email'
 							name='email'
-							value={user.email}
+							value={newUser.email}
 							onChange={handleChange}
 							placeholder='user@example.com'></input>
 						<label htmlFor='username'>
@@ -48,7 +48,7 @@ const Signup = () => {
 						<input
 							type='text'
 							name='username'
-							value={user.username}
+							value={newUser.username}
 							onChange={handleChange}
 							placeholder='username'></input>
 						<label htmlFor='password'>
@@ -57,7 +57,7 @@ const Signup = () => {
 						<input
 							type='password'
 							name='password'
-							value={user.password}
+							value={newUser.password}
 							onChange={handleChange}
 							placeholder='Password'></input>
 						<label htmlFor='re_password'>
@@ -66,13 +66,11 @@ const Signup = () => {
 						<input
 							type='password'
 							name='re_password'
-							value={user.re_password}
+							value={newUser.re_password}
 							onChange={handleChange}
 							placeholder='Re-Type Password'></input>
 
-						<button type='submit'>
-							Sign Up
-						</button>
+						<button type='submit'>Sign Up</button>
 					</form>
 					<Link to={'/login'}>
 						<p> Already have an account? Click to Login.</p>

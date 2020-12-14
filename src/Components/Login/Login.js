@@ -5,7 +5,6 @@ import './login.scss';
 import { Link } from 'react-router-dom';
 
 const Login = ({ setToken, setLoggedIn, loggedIn }) => {
-
 	const [user, setUser] = useState({
 		email: '',
 		username: '',
@@ -21,8 +20,6 @@ const Login = ({ setToken, setLoggedIn, loggedIn }) => {
 		});
 	};
 
-	
-
 	const handleChange = (event) => {
 		event.preventDefault();
 		setUser({ ...user, [event.target.name]: event.target.value });
@@ -32,7 +29,7 @@ const Login = ({ setToken, setLoggedIn, loggedIn }) => {
 		<div className='login-page'>
 			<div className='login-container'>
 				<div className='form-container'>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<label htmlFor='email'>
 							<b>Email</b>
 						</label>
@@ -52,9 +49,7 @@ const Login = ({ setToken, setLoggedIn, loggedIn }) => {
 							onChange={handleChange}
 							placeholder='Password'></input>
 
-						<button type='submit' onSubmit={handleSubmit}>
-							Log In
-						</button>
+						<button type='submit'>Log In</button>
 					</form>
 					<Link to={'/signup'}>
 						<p> New to EarthBFF? Sign Up Here.</p>
