@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NumberFormat from 'react-number-format';
 import './calculator.scss';
+import axios from 'axios';
 
 // const quiz = [
 // 	{
@@ -177,12 +178,17 @@ import './calculator.scss';
 
 const calculatorUrl = 'http://localhost:8000/questions/';
 
-const Calculator = ({ carbonFootprint, setCarbonFootprint }) => {
+const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 	const [calculator, setCalculator] = useState();
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showStart, setShowStart] = useState(true);
 	const [showQuestions, setShowQuestions] = useState(false);
 	const [showResults, setShowResults] = useState(false);
+
+	const userCarbonOuput = {
+		"carbon_output": carbonFootprint,
+		"owner": localStorage.pk,
+	};
 
 	useEffect(() => {
 		fetch(calculatorUrl)
@@ -193,6 +199,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint }) => {
 			.catch((err) => {
 				console.error(err);
 			});
+
 	}, []);
 
 	if (!calculator) {
@@ -202,6 +209,34 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint }) => {
 	const handleStart = () => {
 		setShowStart(false);
 		setShowQuestions(true);
+		setCarbonFootprint(0);
+	};
+
+
+
+	const handleSaveScore = (event) => {
+		
+		
+			console.log(carbonFootprint)
+			event.preventDefault();
+			
+			axios({
+				method: 'POST',
+				url: 'http://localhost:8000/results',
+				headers: { Authorization: `Token ${localStorage.token}` },
+				data: userCarbonOuput,
+			}).then((res) => {
+				console.log(res);
+			});
+	};
+	
+		
+
+
+	const handleStartOver = () => {
+		setShowStart(false);
+		setShowQuestions(true);
+		setCarbonFootprint(0);
 	};
 
 	const handleResponseClick = (carbon_output) => {
@@ -297,6 +332,12 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint }) => {
 					The average person has this carbon footprint, that his is what you
 					have...
 				</h5>
+				<button
+					style={{ display: loggedIn ? 'block' : 'none' }}
+					onClick={handleSaveScore}>
+					Save Score to Profile
+				</button>
+				<button onClick={handleStartOver}>Start Over</button>
 			</div>
 		</div>
 	);

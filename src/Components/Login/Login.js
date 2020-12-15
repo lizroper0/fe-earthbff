@@ -18,9 +18,23 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 			url: 'http://localhost:8000/token/login',
 			data: user,
 		}).then((res) => {
-			console.log(res.data.auth_token);
+			localStorage.setItem('username', user.email);
 			localStorage.setItem('token', res.data.auth_token);
-			setLoggedIn(true)
+			setLoggedIn(true);
+		});
+	};
+
+	
+	const getPrimaryKey = () => {
+		const username = { username: localStorage.getItem('username') };
+		axios({
+			method: 'GET',
+			url: 'http://localhost:8000/users/me',
+			headers: { Authorization: `Token ${localStorage.token}` },
+			data: username,
+		}).then((res) => {
+			console.log(res.data.id);
+			localStorage.setItem('id', res.data.id);
 		});
 	};
 
@@ -30,10 +44,10 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 	};
 
 	if (loggedIn) {
+		getPrimaryKey()
 		return <Redirect to='/calculator' />;
 	}
 
-	
 
 	return (
 		<div className='login-page'>

@@ -1,7 +1,7 @@
 import './App.scss';
 
-import React, { useState, useEffect } from 'react';
-import { Route, Redirect, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, useHistory } from 'react-router-dom';
 
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
@@ -25,9 +25,6 @@ function App() {
 		history.push('/login')
 	};
 
-	// if (!loggedIn && shouldRedirect) {
-	// 	return <Redirect to='/' />;
-	// }
 
 	return (
 		<div>
