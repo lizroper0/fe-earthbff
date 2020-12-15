@@ -187,7 +187,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 
 	const userCarbonOuput = {
 		"carbon_output": carbonFootprint,
-		"owner": localStorage.pk,
+		"owner": parseInt(localStorage.getItem("id"))
 	};
 
 	useEffect(() => {
@@ -222,7 +222,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 			
 			axios({
 				method: 'POST',
-				url: 'http://localhost:8000/results',
+				url: 'http://localhost:8000/results/',
 				headers: { Authorization: `Token ${localStorage.token}` },
 				data: userCarbonOuput,
 			}).then((res) => {
@@ -230,8 +230,6 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 			});
 	};
 	
-		
-
 
 	const handleStartOver = () => {
 		setShowStart(false);
