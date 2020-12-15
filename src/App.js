@@ -12,7 +12,6 @@ import Resources from './Components/Resources/Resources';
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
-	const [token, setToken] = useState(null);
 	const [loggedIn, setLoggedIn] = useState(false);
 
 	return (
@@ -24,28 +23,22 @@ function App() {
 					exact
 					path='/calculator'
 					render={() => (
-						<Calculator carbonFootprint={carbonFootprint} setCarbonFootprint={setCarbonFootprint} />
+						<Calculator
+							carbonFootprint={carbonFootprint}
+							setCarbonFootprint={setCarbonFootprint}
+						/>
 					)}
 				/>
 				<Route
 					exact
 					path='/login'
-					render={() => (
-						<Login
-							token={token}
-							setToken={setToken}
-							loggedIn={loggedIn}
-							setLoggedIn={setLoggedIn}
-						/>
-					)}
+					render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
 				/>
 				<Route
 					exact
 					path='/signup'
 					render={() => (
 						<Signup
-							token={token}
-							setToken={setToken}
 							loggedIn={loggedIn}
 							setLoggedIn={setLoggedIn}
 						/>

@@ -4,11 +4,18 @@ import './login.scss';
 
 import { Link } from 'react-router-dom';
 
-const Login = ({  }) => {
+const Login = ({loggedIn, setLoggedIn}) => {
+	
+	
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
 	});
+
+	//Need a timeout method
+
+
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios({
@@ -17,7 +24,11 @@ const Login = ({  }) => {
 			data: user,
 		}).then((res)=> {
 			console.log(res.data.auth_token)
-			localStorage.setItem(res.data.auth_token);
+			const token = res.data.auth_token;
+			// const expirationDate = new Date(new Date().getTime() + 3600 *1000)
+			localStorage.setItem('token', token)
+			// localStorage.setItem('expirationDate', expirationDate)
+			setLoggedIn(true)
 		})
 	};
 

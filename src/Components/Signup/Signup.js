@@ -20,6 +20,7 @@ const Signup = () => {
 			data: newUser,
 		}).then((res)=> {
 			console.log(res)
+			
 		})
 	};
 

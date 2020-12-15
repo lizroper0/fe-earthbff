@@ -1,0 +1,111 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+.container {
+	max-width: 1200px;
+}
+
+.resources {
+	margin: 100px 0 0 0;
+	height: 100vh;
+	// display: flex;
+	// flex-direction: row;
+	// justify-content: center;
+}
+
+.resources h1 {
+	display: block;
+    text-align: center;
+    font-family: 'Chelsea Market', cursive;
+}
+
+.resources-video {
+	display: flex;
+	justify-content: center;
+	
+}
+
+.resource-button-container {
+	display: flex;
+	justify-content: center;
+    align-items: baseline;
+    margin: 30px auto;
+}
+
+.resource-button-container a {
+	width: 300px;
+	margin: auto 50px;
+	text-align: center;
+}
+.resource-button {
+	box-sizing: border-box;
+	width: 300px;
+	appearance: none;
+	background-color: transparent;
+	border: 2px solid $green;
+	border-radius: 0.6em;
+	color: $green;
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: 1;
+	margin: auto 50px;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 40px 40px $green inset;
+		color: #fff;
+		outline: 0;
+	}
+}
+
+.section-container {
+	display: flex;
+	max-width: 1200px;
+	flex-direction: row;
+}
+
+.section-container h2 {
+	max-width: 1200px;
+	font-family: 'Chelsea Market', cursive;
+	margin-top: 35px;
+	margin-bottom: 10px;
+}
+
+
+/* Add Media Queries Here */
+@media only screen and (max-width: 700px) {
+	body {
+		font-size: 1em;
+	}
+
+	.home {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding: 1em;
+		grid-row-gap: 100px;
+	}
+
+	.tag-line {
+		font-size: 20px;
+		align-self: center;
+		margin: 0;
+	}
+
+	.home-image img {
+		object-fit: scale-down;
+		margin: auto;
+	}
+
+	.home-button {
+		width: fit-content;
+		font-size: 0.5rem;
+		line-height: 1;
+		margin: 5px;
+		padding: 1.2em 2.8em;
+	}
+}
