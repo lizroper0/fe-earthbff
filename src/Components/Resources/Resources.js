@@ -42,11 +42,16 @@ const Resources = () => {
 						<div>Before the Flood </div>
 						<div>Cowspiracy: The Sustainability Secret</div>
 					</div>
-					<h2>Podcasts</h2>
-					<div>Warm Regards</div>
-					<div>How to Save a Planet</div>
-					<div>Our Planet</div>
-					<div className='section-container' id='podcasts'></div>
+
+					<div className='section-container' id='podcasts'>
+						<h2>Podcasts</h2>
+						<div>Warm Regards</div>
+						<div>How to Save a Planet</div>
+						<div>The Sustainability Agenda</div>
+						<div>The Energy Gang
+							
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

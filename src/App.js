@@ -1,7 +1,7 @@
 import './App.scss';
 
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Redirect, useHistory } from 'react-router-dom';
 
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
@@ -12,11 +12,32 @@ import Resources from './Components/Resources/Resources';
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(
+		localStorage.getItem('token') ? true : false
+	);
+
+	const [shouldRedirect, setShouldRedirect] = useState(false);
+	const history = useHistory()
+	const handleLogout = () => {
+		localStorage.clear();
+		setLoggedIn(false);
+		setShouldRedirect(true);
+		history.push('/login')
+	};
+
+	// if (!loggedIn && shouldRedirect) {
+	// 	return <Redirect to='/' />;
+	// }
 
 	return (
 		<div>
-			<Nav />
+			<Nav
+				loggedIn={loggedIn}
+				setLoggedIn={setLoggedIn}
+				handleLogout={handleLogout}
+				shouldRedirect={shouldRedirect}
+				setShouldRedirect={setShouldRedirect}
+			/>
 			<main>
 				<Route exact path='/' render={() => <Home />} />
 				<Route
@@ -26,6 +47,7 @@ function App() {
 						<Calculator
 							carbonFootprint={carbonFootprint}
 							setCarbonFootprint={setCarbonFootprint}
+							loggedIn={loggedIn}
 						/>
 					)}
 				/>
@@ -38,10 +60,7 @@ function App() {
 					exact
 					path='/signup'
 					render={() => (
-						<Signup
-							loggedIn={loggedIn}
-							setLoggedIn={setLoggedIn}
-						/>
+						<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
 					)}
 				/>
 				<Route exact path='/resources' render={() => <Resources />} />
