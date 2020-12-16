@@ -1,39 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import './community.scss';
 
 const communityPostsUrl = 'http://localhost:8000/posts/';
 
 const Community = ({ loggedIn }) => {
-    const [posts, setPosts] = useState();
-    const [showCreateButton, setShowCreateButton] = useState(true);
+	const [posts, setPosts] = useState();
+	const [showCreateButton, setShowCreateButton] = useState(true);
 	const [showModal, setShowModal] = useState(false);
 	const [postsDisplay, setPostsDisplay] = useState(true);
 	const [newPost, setNewPost] = useState({
 		title: '',
 		body: '',
+		author: localStorage.getItem('id')
 	});
 
 	const handleClose = () => {
-        setShowModal(false);
-        setPostsDisplay(true);
+		setShowModal(false);
+		setPostsDisplay(true);
 	};
 
 	const handleShowPostForm = () => {
 		setShowModal(true);
 		setPostsDisplay(false);
-		setShowCreateButton(false)
+		setShowCreateButton(false);
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios({
 			method: 'POST',
-			url: 'https://localhost:8000/posts/login',
+			url: 'http://localhost:8000/posts/',
+			headers: { Authorization: `Token ${localStorage.token}` },
 			data: newPost,
 		}).then((res) => {
 			setShowModal(false);
+			setPostsDisplay(true);
+			setShowCreateButton(true);
 		});
 	};
 
@@ -119,7 +123,7 @@ const Community = ({ loggedIn }) => {
 			</div>
 			<div
 				className='posts-area'
-				style={{ display: postsDisplay ? 'block' : 'none' }}>
+				style={{ display: postsDisplay ? 'flex' : 'none' }}>
 				{posts.map((post) => {
 					return (
 						<div className='post-container' key={post.id}>
