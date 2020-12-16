@@ -3,12 +3,7 @@ $green: #6fad71;
 $blue: #9cd7f3;
 
 .signup-page {
-	width: 100vw;
-	height: 100vh;
-	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-rows: 1fr 2fr 1fr;
-	color: black;
+	margin: 150px auto;
 }
 
 input[type=email], [type=text], input[type=password] {
@@ -21,22 +16,42 @@ input[type=email], [type=text], input[type=password] {
 }
 
 .signup-container {
-	grid-column: 2;
-	grid-row: 2;
-	display: grid;
 	border-color: black;
 	border: solid;
 	border-radius: 15px;
-	background-color: white;
+	margin:auto;
+	max-width: 500px;
+	text-align: center;
 }
 
 .signup-form-container {
 	margin: auto;
-	padding-bottom: 50px;
+	padding: 50px;
 }
 
-.button {
-	color: #004225;
+.signup-button {
+	box-sizing: border-box;
+	width: 300px;
+	appearance: none;
+	background-color: transparent;
+	border: 2px solid $green;
+	border-radius: 0.6em;
+	color: $green;
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: 1;
+	margin:  50px;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 40px 40px $green inset;
+		color: #fff;
+		outline: 0;
+	}
 }
 
 p {

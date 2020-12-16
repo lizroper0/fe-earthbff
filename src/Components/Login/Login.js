@@ -24,7 +24,6 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 		});
 	};
 
-	
 	const getPrimaryKey = () => {
 		const username = { username: localStorage.getItem('username') };
 		axios({
@@ -44,10 +43,9 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 	};
 
 	if (loggedIn) {
-		getPrimaryKey()
+		getPrimaryKey();
 		return <Redirect to='/calculator' />;
 	}
-
 
 	return (
 		<div className='login-page'>
@@ -73,11 +71,16 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 							onChange={handleChange}
 							placeholder='Password'></input>
 
-						<button type='submit'>Log In</button>
+						<button className='login-button' type='submit'>
+							Log In
+						</button>
 					</form>
-					<Link to={'/signup'}>
-						<p> New to EarthBFF? Sign Up Here.</p>
-					</Link>
+
+					<p>
+						{' '}
+						New to EarthBFF? Sign Up {' '}
+						<Link to='/signup'>Here.</Link>
+					</p>
 				</div>
 			</div>
 		</div>

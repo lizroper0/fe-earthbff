@@ -14,7 +14,7 @@ const Nav = ({ loggedIn, handleLogout }) => {
 				<Link to='/community'>Community</Link>
 
 				{!loggedIn && <Link to='/login'>Login</Link>}
-				{loggedIn && <button onClick={handleLogout}>Logout</button>}
+				{loggedIn && <button className='nav-button' onClick={handleLogout}>Logout</button>}
 				<Link to='/profile'>
 					<img className='profile-img' src={ProfileLogo} alt='EarthBFFLogo' />
 				</Link>

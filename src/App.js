@@ -9,6 +9,7 @@ import Calculator from './Components/Calculator/Calculator';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import Resources from './Components/Resources/Resources';
+import Community from './Components/Community/Community'
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
@@ -61,6 +62,7 @@ function App() {
 					)}
 				/>
 				<Route exact path='/resources' render={() => <Resources />} />
+				<Route exact path='/community' render={() => <Community />} />
 			</main>
 			<footer>
 				<p>&copy; 2020 Lucky Lizard Technologies</p>

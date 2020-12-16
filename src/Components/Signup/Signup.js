@@ -51,7 +51,7 @@ const Signup = () => {
 							name='username'
 							value={newUser.username}
 							onChange={handleChange}
-							placeholder='username'></input>
+							placeholder='Username'></input>
 						<label htmlFor='password'>
 							<b>Password</b>
 						</label>
@@ -71,11 +71,14 @@ const Signup = () => {
 							onChange={handleChange}
 							placeholder='Re-Type Password'></input>
 
-						<button type='submit'>Sign Up</button>
+						<button className='signup-button' type='submit'>Sign Up</button>
 					</form>
-					<Link to={'/login'}>
-						<p> Already have an account? Click to Login.</p>
-					</Link>
+
+					<p>
+						{' '}
+						Already have an account? Click to <Link to='/login'>Here </Link>
+						to Login.
+					</p>
 				</div>
 			</div>
 		</div>

@@ -22,15 +22,26 @@ $blue: #9cd7f3;
 	padding: 0.5rem 1rem 0rem 0rem;
 	transition: all 300ms ease;
 	font-family: 'Source Sans Pro', sans-serif;
-}
 
-.navbar nav a:hover {
 	
-	text-decoration: underline;
 }
 
-.navbar h1 a:hover {
+.navbar a:hover {
+	color: $blue ;
+	// text-decoration: none;
+}
+.nav-button {
+	background: none;
+	border: none;
+	color: black;
+	padding: 0.5rem 1rem 0rem 0rem;
 	text-decoration: none;
+	font-family: 'Source Sans Pro', sans-serif;
+
+	&:hover {
+		color: $blue;
+		outline: 0;
+	}
 }
 
 .navbar h1 {
@@ -38,10 +49,16 @@ $blue: #9cd7f3;
 	padding: 0.5rem;
 	color: black;
 	font-family: 'Chelsea Market', cursive;
+
+	&:hover {
+		color: $blue;
+		text-decoration: none;
+	}
 }
 
 a {
 	text-decoration: none;
+	color: $blue;
 }
 
 .profile-img {
