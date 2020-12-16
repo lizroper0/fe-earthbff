@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Moment from 'moment';
 import './community.scss';
 
 const communityPostsUrl = 'http://localhost:8000/posts/';
 
-const Community = () => {
+const Community = ({ loggedIn }) => {
 	const [posts, setPosts] = useState();
 
 	useEffect(() => {
@@ -24,14 +26,29 @@ const Community = () => {
 
 	return (
 		<div className='community-container'>
-			{posts.map((post) => {
-				return (
-					<div className='post-container' key={post.id}>
-						<h3>{post.title}</h3>
-						<h3>{post.body}</h3>
-					</div>
-				);
-			})}
+			<h1>Community Bulletin Board</h1>
+			<div className='community-content-container'>
+				<h4>
+					Use this space to post postive messages, share climate change facts,
+					and engage with the EarthBFF community.
+				</h4>
+				<h4>
+					Posts that go against our{' '}
+					<Link to='/communityguidelines'>community guidelines</Link> will be
+					removed.
+				</h4>
+			</div>
+			<div className='posts-area'>
+				{posts.map((post) => {
+					return (
+						<div className='post-container' key={post.id}>
+							<h5>{post.title}</h5>
+							<h6>{post.body}</h6>
+							<h7> {(post.timestamp)}</h7>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

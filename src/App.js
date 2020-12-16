@@ -11,6 +11,7 @@ import Signup from './Components/Signup/Signup';
 import Resources from './Components/Resources/Resources';
 import Community from './Components/Community/Community'
 import Profile from './Components/Profile/Profile'
+import NotFound from './Components/Not Found/NotFound'
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
@@ -63,8 +64,17 @@ function App() {
 					)}
 				/>
 				<Route exact path='/resources' render={() => <Resources />} />
-				<Route exact path='/community' render={() => <Community />} />
-				<Route exact path='/profile' render={() => <Profile />} />
+				<Route
+					exact
+					path='/community'
+					render={() => <Community loggedIn={loggedIn} />}
+				/>
+				<Route
+					exact
+					path='/profile'
+					render={() => <Profile loggedIn={loggedIn} />}
+				/>
+				<Route render={() => <NotFound/>} />
 			</main>
 			<footer>
 				<p>&copy; 2020 Lucky Lizard Technologies</p>
