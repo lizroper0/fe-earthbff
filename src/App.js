@@ -1,7 +1,7 @@
 import './App.scss';
 
 import React, { useState } from 'react';
-import { Route, useHistory } from 'react-router-dom';
+import { Route, useHistory, Switch } from 'react-router-dom';
 
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
@@ -39,42 +39,46 @@ function App() {
 				setShouldRedirect={setShouldRedirect}
 			/>
 			<main>
-				<Route exact path='/' render={() => <Home />} />
-				<Route
-					exact
-					path='/calculator'
-					render={() => (
-						<Calculator
-							carbonFootprint={carbonFootprint}
-							setCarbonFootprint={setCarbonFootprint}
-							loggedIn={loggedIn}
-						/>
-					)}
-				/>
-				<Route
-					exact
-					path='/login'
-					render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
-				/>
-				<Route
-					exact
-					path='/signup'
-					render={() => (
-						<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-					)}
-				/>
-				<Route exact path='/resources' render={() => <Resources />} />
-				<Route
-					exact
-					path='/community'
-					render={() => <Community loggedIn={loggedIn} />}
-				/>
-				<Route
-					exact
-					path='/profile'
-					render={() => <Profile loggedIn={loggedIn} />}
-				/>
-				<Route render={() => <NotFound/>} />
+				<Switch>
+					<Route exact path='/' render={() => <Home />} />
+					<Route
+						exact
+						path='/calculator'
+						render={() => (
+							<Calculator
+								carbonFootprint={carbonFootprint}
+								setCarbonFootprint={setCarbonFootprint}
+								loggedIn={loggedIn}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path='/login'
+						render={() => (
+							<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+						)}
+					/>
+					<Route
+						exact
+						path='/signup'
+						render={() => (
+							<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+						)}
+					/>
+					<Route exact path='/resources' render={() => <Resources />} />
+					<Route
+						exact
+						path='/community'
+						render={() => <Community loggedIn={loggedIn} />}
+					/>
+					<Route
+						exact
+						path='/profile'
+						render={() => <Profile loggedIn={loggedIn} />}
+					/>
+					<Route render={() => <NotFound />} />
+				</Switch>
 			</main>
 			<footer>
 				<p>&copy; 2020 Lucky Lizard Technologies</p>

@@ -1,0 +1,44 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+.page_404 {
+	margin: 100px;
+	padding: 40px 0;
+	background: #fff;
+}
+
+.page_404 img {
+	width: 100%;
+}
+
+.four_zero_four_bg {
+	background-image: url('../../images/woman-and-earth.png');
+	height: 400px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.four_zero_four_bg h1 {
+	font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+	font-size: 80px;
+}
+
+.link_404 {
+	color: #fff !important;
+	padding: 10px 20px;
+	background: $green;
+	margin: 20px 0;
+	display: inline-block;
+	border-radius: 15px;
+	&:hover {
+		text-decoration: none;
+	}
+}
+.contant_box_404 {
+	margin-top: -50px;
+}
