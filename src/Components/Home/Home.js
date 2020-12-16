@@ -15,11 +15,11 @@ const Home = () => {
 					<img src={EarthBFFLogo} alt='EarthBFFLogo' />
 				</div>
 				<div className='home-button-container'>
-					<a href='#learn'>
-						<button className='home-button'>Learn More</button>
-					</a>
+					<Link to='/calculator'>
+						<button className='home-button'>Carbon Footprint Calculator</button>
+					</Link>
 					<Link to='/community'>
-						<button className='home-button'>Join Our Community</button>
+						<button className='home-button'>Explore Our Community</button>
 					</Link>
 				</div>
 			</div>
@@ -57,8 +57,8 @@ const Home = () => {
 							climate change is causing the Earth to warm up resulting in
 							melting glaciers, rising sea levels, and changes in severity and
 							frequency of natural disasters. Climate change is caused by all of
-							the carbon emissions and greenhouse gases made mostly
-							by human activity.
+							the carbon emissions and greenhouse gases made mostly by human
+							activity.
 						</h5>
 					</div>
 					<div>

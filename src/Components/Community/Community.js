@@ -1,45 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Moment from 'moment';
+import axios from 'axios'
 import './community.scss';
 
 const communityPostsUrl = 'http://localhost:8000/posts/';
 
 const Community = ({ loggedIn }) => {
     const [posts, setPosts] = useState();
-    const [newPost, setNewPost] = useState({
-			title: '',
-			body: '',
+    const [showCreateButton, setShowCreateButton] = useState(true);
+	const [showModal, setShowModal] = useState(false);
+	const [postsDisplay, setPostsDisplay] = useState(true);
+	const [newPost, setNewPost] = useState({
+		title: '',
+		body: '',
+	});
+
+	const handleClose = () => {
+        setShowModal(false);
+        setPostsDisplay(true);
+	};
+
+	const handleShowPostForm = () => {
+		setShowModal(true);
+		setPostsDisplay(false);
+		setShowCreateButton(false)
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		axios({
+			method: 'POST',
+			url: 'https://localhost:8000/posts/login',
+			data: newPost,
+		}).then((res) => {
+			setShowModal(false);
 		});
-    const [showModal, setShowModal] = useState(false);
-	const handleClose = () => setShowModal(false);
-	const handleShow = () => setShowModal(true);
+	};
 
-
-    const showPostForm = () => {
-			
-        };
-        
-    const handlePostSubmit= () => {};
-
-    const handleSubmit = (event) => {
-			// event.preventDefault();
-			// axios({
-			// 	method: 'POST',
-			// 	url: 'https://earthbff-backend.herokuapp.com/token/login',
-			// 	data: user,
-			// }).then((res) => {
-			// 	localStorage.setItem('username', user.email);
-			// 	localStorage.setItem('token', res.data.auth_token);
-			// 	setLoggedIn(true);
-			// });
-        };
-        
-        const handleChange = (event) => {
-					// event.preventDefault();
-					// setUser({ ...user, [event.target.name]: event.target.value });
-				};
-
+	const handleChange = (event) => {
+		event.preventDefault();
+		setNewPost({ ...newPost, [event.target.name]: event.target.value });
+	};
 
 	useEffect(() => {
 		fetch(communityPostsUrl)
@@ -71,20 +72,20 @@ const Community = ({ loggedIn }) => {
 					removed.
 				</h4>
 				<button
-					className='post-button'
-					style={{ display: loggedIn ? 'block' : 'none' }}
-					onClick={showPostForm}>
+					className='create-post-button'
+					style={{ display: loggedIn && showCreateButton ? 'block' : 'none' }}
+					onClick={handleShowPostForm}>
 					Create a Post
 				</button>
 				<button
-					className='post-button'
-					style={{ display: !loggedIn ? 'block' : 'none' }}
-					// onClick={handlePost}
-				>
-					Login / Signup to Create Post
+					className='login-post-button'
+					style={{ display: !loggedIn ? 'block' : 'none' }}>
+					<Link to='/login'>Login / Signup to Create Post</Link>
 				</button>
-				<div className='form-container'>
-					<form onSubmit={handleSubmit}>
+				<div
+					className='post-form-container'
+					style={{ display: showModal ? 'block' : 'none' }}>
+					<form className='post-form' onSubmit={handleSubmit}>
 						<label htmlFor='email'>
 							<b>Title</b>
 						</label>
@@ -107,19 +108,24 @@ const Community = ({ loggedIn }) => {
 						<button className='post-button' type='submit'>
 							Post
 						</button>
-						<button className='cance-button' type='submit'>
+						<button
+							className='cancel-button'
+							onClick={handleClose}
+							type='submit'>
 							Cancel
 						</button>
 					</form>
 				</div>
 			</div>
-			<div className='posts-area'>
+			<div
+				className='posts-area'
+				style={{ display: postsDisplay ? 'block' : 'none' }}>
 				{posts.map((post) => {
 					return (
 						<div className='post-container' key={post.id}>
 							<h5>{post.title}</h5>
 							<h6>{post.body}</h6>
-							<h7> {post.timestamp}</h7>
+							<p> {post.timestamp}</p>
 						</div>
 					);
 				})}
