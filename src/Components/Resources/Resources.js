@@ -2,8 +2,8 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import './Resources.scss';
 import Weather from '../../images/weather.jpg';
-import Sixth from '../../images/sixth.jpg'
-import Uninhabitable from '../../images/uninhabitable.jpg'
+import Sixth from '../../images/sixth.jpg';
+import Uninhabitable from '../../images/uninhabitable.jpg';
 
 const Resources = () => {
 	return (
@@ -22,13 +22,13 @@ const Resources = () => {
 					<div className='section-container' id='books'>
 						<div>
 							<h5>We Are The Weather by Jonathan Safran Foer</h5>
-							<img src={Weather} />
+							<img src={Weather} alt='We Are The Weather book cover' />
 						</div>
 						<div>
 							<h5>
 								The Sixth Extinction: An Unnatural History by Elizabeth Kolbert
 							</h5>
-							<img src={Sixth} />
+							<img src={Sixth} alt='The Sixth Extinction book cover' />
 						</div>
 						<div>
 							<h5>
@@ -36,7 +36,10 @@ const Resources = () => {
 								Wallace-Wells
 							</h5>
 
-							<img src={Uninhabitable} />
+							<img
+								src={Uninhabitable}
+								alt='The Uninhabitable Earth book cover'
+							/>
 						</div>
 					</div>
 					<h2>Documentaries</h2>
