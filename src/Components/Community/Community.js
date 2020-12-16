@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './community.scss';
 
-const communityPostsUrl = 'http://localhost:8000/posts/';
+const communityPostsUrl = 'https://earthbff-backend.herokuapp.com/posts/';
 
 const Community = ({ loggedIn }) => {
 	const [posts, setPosts] = useState();
@@ -13,8 +13,20 @@ const Community = ({ loggedIn }) => {
 	const [newPost, setNewPost] = useState({
 		title: '',
 		body: '',
-		author: localStorage.getItem('id')
+		author: localStorage.getItem('id'),
 	});
+
+	useEffect(() => {
+		fetch(communityPostsUrl)
+			.then((res) => res.json())
+			.then((res) => {
+				setPosts(res);
+				console.log(res);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}, [postsDisplay]);
 
 	const handleClose = () => {
 		setShowModal(false);
@@ -31,13 +43,13 @@ const Community = ({ loggedIn }) => {
 		event.preventDefault();
 		axios({
 			method: 'POST',
-			url: 'http://localhost:8000/posts/',
+			url: 'https://earthbff-backend.herokuapp.com/posts/',
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: newPost,
 		}).then((res) => {
 			setShowModal(false);
-			setPostsDisplay(true);
 			setShowCreateButton(true);
+			setPostsDisplay(true);
 		});
 	};
 
@@ -45,18 +57,6 @@ const Community = ({ loggedIn }) => {
 		event.preventDefault();
 		setNewPost({ ...newPost, [event.target.name]: event.target.value });
 	};
-
-	useEffect(() => {
-		fetch(communityPostsUrl)
-			.then((res) => res.json())
-			.then((res) => {
-				setPosts(res);
-				console.log(res);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	}, []);
 
 	if (!posts) {
 		return <h1>Loading...</h1>;
