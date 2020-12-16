@@ -7,13 +7,16 @@ $blue: #9cd7f3;
 }
 
 .resources {
-	margin: 100px 0 0 0;
-	height: 100vh;
+	margin: 100px 0 ;
+	
 	// display: flex;
 	// flex-direction: row;
 	// justify-content: center;
 }
 
+.title-container {
+	margin: 50px
+}
 .resources h1 {
 	display: block;
     text-align: center;
@@ -26,53 +29,9 @@ $blue: #9cd7f3;
 	
 }
 
-.resource-button-container {
-	display: flex;
-	justify-content: center;
-    align-items: baseline;
-    margin: 30px auto;
-}
-
-.resource-button-container a {
-	width: 300px;
-	margin: auto 50px;
-	text-align: center;
-}
-.resource-button {
-	box-sizing: border-box;
-	width: 300px;
-	appearance: none;
-	background-color: transparent;
-	border: 2px solid $green;
-	border-radius: 0.6em;
-	color: $green;
-	cursor: pointer;
-	font-size: 1rem;
-	line-height: 1;
-	margin: auto 50px;
-	padding: 1.2em 2.8em;
-	text-decoration: none;
-	text-align: center;
-	font-weight: 700;
-	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-
-	&:hover {
-		box-shadow: 0 0 40px 40px $green inset;
-		color: #fff;
-		outline: 0;
-	}
-}
-
-.section-container {
-	display: flex;
-	max-width: 1200px;
-	flex-direction: row;
-}
-
 .section-container h2 {
 	max-width: 1200px;
 	font-family: 'Chelsea Market', cursive;
-	margin-top: 35px;
 	margin-bottom: 10px;
 }
 

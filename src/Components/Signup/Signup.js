@@ -16,12 +16,11 @@ const Signup = () => {
 		event.preventDefault();
 		axios({
 			method: 'POST',
-			url: 'http://localhost:8000/users/',
+			url: 'https://earthbff-backend.herokuapp.com/users/',
 			data: newUser,
-		}).then((res)=> {
-			console.log(res)
-			
-		})
+		}).then((res) => {
+			console.log(res);
+		});
 	};
 
 	const handleChange = (event) => {
@@ -40,18 +39,18 @@ const Signup = () => {
 						<input
 							type='email'
 							name='email'
-							value={newUser.email}
+							value={(newUser.user, newUser.email)}
 							onChange={handleChange}
 							placeholder='user@example.com'></input>
 						<label htmlFor='username'>
-							<b>Username</b>
+							<b>Confirm Email</b>
 						</label>
 						<input
 							type='text'
 							name='username'
 							value={newUser.username}
 							onChange={handleChange}
-							placeholder='Username'></input>
+							placeholder='Re-Type Email'></input>
 						<label htmlFor='password'>
 							<b>Password</b>
 						</label>
@@ -71,7 +70,9 @@ const Signup = () => {
 							onChange={handleChange}
 							placeholder='Re-Type Password'></input>
 
-						<button className='signup-button' type='submit'>Sign Up</button>
+						<button className='signup-button' type='submit'>
+							Sign Up
+						</button>
 					</form>
 
 					<p>

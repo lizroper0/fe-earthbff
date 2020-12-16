@@ -3,7 +3,7 @@ import NumberFormat from 'react-number-format';
 import './calculator.scss';
 import axios from 'axios';
 
-const calculatorUrl = 'http://localhost:8000/questions/';
+const calculatorUrl = 'https://earthbff-backend.herokuapp.com/questions/';
 
 const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 	const [calculator, setCalculator] = useState();
@@ -42,7 +42,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 		event.preventDefault();
 		axios({
 			method: 'POST',
-			url: 'http://localhost:8000/results/',
+			url: 'https://earthbff-backend.herokuapp.com/results/',
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: userCarbonOuput,
 		}).then((res) => {
@@ -55,6 +55,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 		setShowQuestions(true);
 		setShowResults(false);
 		setCarbonFootprint(0);
+		setCurrentQuestion(0);
 	};
 
 	const handleResponseClick = (carbon_output) => {
@@ -151,11 +152,14 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 					have...
 				</h5>
 				<button
+					className='results-button'
 					style={{ display: loggedIn ? 'block' : 'none' }}
 					onClick={handleSaveScore}>
-					Save Score to Profile
+					Save to Profile
 				</button>
-				<button onClick={handleStartOver}>Start Over</button>
+				<button className='results-button' onClick={handleStartOver}>
+					Start Over
+				</button>
 			</div>
 		</div>
 	);

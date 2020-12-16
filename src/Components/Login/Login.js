@@ -15,7 +15,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 		event.preventDefault();
 		axios({
 			method: 'POST',
-			url: 'http://localhost:8000/token/login',
+			url: 'https://earthbff-backend.herokuapp.com/token/login',
 			data: user,
 		}).then((res) => {
 			localStorage.setItem('username', user.email);
@@ -28,7 +28,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 		const username = { username: localStorage.getItem('username') };
 		axios({
 			method: 'GET',
-			url: 'http://localhost:8000/users/me',
+			url: 'https://earthbff-backend.herokuapp.com/users/me/',
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: username,
 		}).then((res) => {
