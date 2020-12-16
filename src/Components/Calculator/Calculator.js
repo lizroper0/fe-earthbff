@@ -29,7 +29,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 	}, []);
 
 	if (!calculator) {
-		return <h1>Loading...</h1>;
+		return <h1 className='lazy-loader'>Loading...</h1>;
 	}
 
 	const handleStart = () => {
