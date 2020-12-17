@@ -8,7 +8,7 @@ $blue: #9cd7f3;
 	background-position: center;
 	background-repeat: repeat;
 	background-size: auto;
-	width: 100%;
+
     height: 100vh;
     text-align: center;
 }
@@ -35,7 +35,7 @@ $blue: #9cd7f3;
 }
 
 .post-container {
-    width: 300px;
+     width: 300px;
     border-radius: 15px;
     background: white;
     padding: 10px;
@@ -111,63 +111,4 @@ $blue: #9cd7f3;
         text-decoration: none;
         color: white;
 	}
-}
-
-.post-form-container {
-	max-width: 500px;
-}
-
-.post-button {
-    box-sizing: border-box;
-	width: 200px;
-	appearance: none;
-	background-color: $green;
-	border: 2px solid $green;
-	border-radius: 0.6em;
-	color: white;
-	cursor: pointer;
-	font-size: 1rem;
-	line-height: 1;
-	margin:  50px 0 50px 0 ;
-	padding: 1.2em 2.8em;
-	text-decoration: none;
-	text-align: center;
-	font-weight: 700;
-	
-	&:hover {
-        text-decoration: none;
-        background-color: $blue;
-        border: 2px solid $blue;
-	}
-
-}
-
-
-.cancel-button {
-    box-sizing: border-box;
-	width: 200px;
-	appearance: none;
-	background-color: $green;
-	border: 2px solid $green;
-	border-radius: 0.6em;
-	color: white;
-	cursor: pointer;
-	font-size: 1rem;
-	line-height: 1;
-	margin:  50px 0 50px 10px;
-	padding: 1.2em 2.8em;
-	text-decoration: none;
-	text-align: center;
-	font-weight: 700;
-	
-	&:hover {
-        text-decoration: none;
-        background-color: $blue;
-        border: 2px solid $blue;
-	}
-
-}
-
-.post-form-container{
-	margin: auto;
 }

@@ -49,7 +49,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 
 	if (loggedIn) {
 		getPrimaryKey();
-		return <Redirect to='/calculator' />;
+		return <Redirect to='/home' />;
 	}
 
 	return (

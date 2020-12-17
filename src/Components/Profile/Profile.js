@@ -17,12 +17,13 @@ const Profile = ({ loggedIn }) => {
 			url: 'https://earthbff-backend.herokuapp.com/results/',
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: owner,
-		}).then((res) => {
-			console.log(res.data[0]);
-			setCarbonFootprint(res.data[0].carbon_output);
-			setfootprintTimestamp(res.data[0].timestamp);
-			
-		});
+		})
+			.then((res) => {
+				console.log(res.data[0]);
+				setCarbonFootprint(res.data[0].carbon_output);
+				setfootprintTimestamp(res.data[0].timestamp);
+			})
+			.catch(console.error);
 	}, []);
 
 	if (!carbonFootprint) {

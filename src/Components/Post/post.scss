@@ -1,0 +1,73 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+.post-page {
+	margin: 150px;
+}
+
+input {
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: block;
+	border: 1px solid #ccc;
+}
+
+.post-form-container {
+	border-color: black;
+	border: solid;
+	border-radius: 15px;
+	margin: auto;
+	max-width: 800px;
+	text-align: center;
+	padding: 10px;
+}
+
+.post-button {
+	box-sizing: border-box;
+	width: 200px;
+	appearance: none;
+	background-color: $green;
+	border: 2px solid $green;
+	border-radius: 0.6em;
+	color: white;
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: 1;
+	margin: 50px 0 50px 0;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	display: inline;
+
+	&:hover {
+		text-decoration: none;
+		background-color: $blue;
+		border: 2px solid $blue;
+	}
+}
+
+.cancel-button {
+	box-sizing: border-box;
+	width: 200px;
+	appearance: none;
+	background-color: $green;
+	border: 2px solid $green;
+	border-radius: 0.6em;
+	color: white;
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: 1;
+	margin: 50px 0 50px 10px;
+	padding: 1.2em 2.8em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+
+	&:hover {
+		text-decoration: none;
+		background-color: $blue;
+		border: 2px solid $blue;
+	}
+}

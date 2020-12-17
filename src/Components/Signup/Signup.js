@@ -28,6 +28,15 @@ const Signup = () => {
 		setNewUser({ ...newUser, [event.target.name]: event.target.value });
 	};
 
+	// const checkPassword = (event) => {
+
+	// }
+
+	// const checkEmail = (event) => {
+
+	// };
+
+
 	return (
 		<div className='signup-page'>
 			<div className='signup-container'>

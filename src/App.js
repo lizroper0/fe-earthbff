@@ -12,6 +12,7 @@ import Resources from './Components/Resources/Resources';
 import Community from './Components/Community/Community'
 import Profile from './Components/Profile/Profile'
 import NotFound from './Components/Not Found/NotFound'
+import Post from './Components/Post/Post'
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
@@ -76,6 +77,11 @@ function App() {
 						exact
 						path='/profile'
 						render={() => <Profile loggedIn={loggedIn} />}
+					/>
+					<Route
+						exact
+						path='/post'
+						render={() => <Post loggedIn={loggedIn} />}
 					/>
 					<Route render={() => <NotFound />} />
 				</Switch>
