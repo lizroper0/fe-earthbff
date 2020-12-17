@@ -21,16 +21,18 @@ const Resources = () => {
 					primer on climate change.
 				</h5>
 			</div>
-			<div className='section-container'>
+			<div className='reource-section-container'>
 				<h2>Books</h2>
 				<div className='book-section-container'>
 					<div className='book-image'>
 						<img src={Weather} alt='We Are The Weather book cover' />
 					</div>
 					<div className='book-description'>
-						<h3>We Are The Weather: Saving the Planet Begins at Breakfast</h3>
-						<h4>By Jonathan Safran Foer</h4>
-						<h5>
+						<h3 className='book-section-title'>
+							We Are The Weather: Saving the Planet Begins at Breakfast
+						</h3>
+						<h4 className='book-section-title'>By Jonathan Safran Foer</h4>
+						<h5 className='book-section-description'>
 							In We Are the Weather, Jonathan Safran Foer explores the central
 							global dilemma of our time in a surprising, deeply personal, and
 							urgent new way.
@@ -49,9 +51,11 @@ const Resources = () => {
 						<img src={Sixth} alt='The Sixth Extinction book cover' />
 					</div>
 					<div className='book-description'>
-						<h3>The Sixth Extinction: An Unnatural History</h3>
-						<h4>By Elizabeth Kolbert</h4>
-						<h5>
+						<h3 className='book-section-title'>
+							The Sixth Extinction: An Unnatural History
+						</h3>
+						<h4 className='book-section-title'> By Elizabeth Kolbert</h4>
+						<h5 className='book-section-description'>
 							In We Are the Weather, Jonathan Safran Foer explores the central
 							global dilemma of our time in a surprising, deeply personal, and
 							urgent new way.
@@ -70,9 +74,11 @@ const Resources = () => {
 						<img src={Uninhabitable} alt='The Uninhabitable Earth book cover' />
 					</div>
 					<div className='book-description'>
-						<h3>The Uninhabitable Earth: Life After Warming</h3>
-						<h4>By David Wallace-Wells</h4>
-						<h5>
+						<h3 className='book-section-title'>
+							The Uninhabitable Earth: Life After Warming
+						</h3>
+						<h4 className='book-section-title'>By David Wallace-Wells</h4>
+						<h5 className='book-section-description'>
 							It is worse, much worse, than you think. If your anxiety about
 							global warming is dominated by fears of sea-level rise, you are
 							barely scratching the surface of what terrors are possible—food
@@ -107,8 +113,8 @@ const Resources = () => {
 					<h2>Podcasts</h2>
 
 					<div className='podcast-description'>
-						<h3>Warm Regards</h3>
-						<h5>
+						<h3 className='podcast-title'>Warm Regards</h3>
+						<h5 className='book-section-description'>
 							Warm Regards is a podcast about life on a warming planet. The
 							conversations are often honest and raw, as we talk with
 							newsmakers, researchers, activists, policymakers, artists, and
@@ -123,8 +129,10 @@ const Resources = () => {
 						</a>
 					</div>
 					<div className='podcast-description'>
-						<h3>Climate Cast: Minnesota Public Radio</h3>
-						<h5>
+						<h3 className='podcast-title'>
+							Climate Cast: Minnesota Public Radio
+						</h3>
+						<h5 className='book-section-description'>
 							MPR News meteorologist Paul Huttner with the latest research on
 							our changing climate.
 						</h5>
@@ -136,8 +144,10 @@ const Resources = () => {
 						</a>
 					</div>
 					<div className='podcast-description'>
-						<h3>How to Save A Planet: Gimlet Media</h3>
-						<h5>
+						<h3 className='podcast-title'>
+							How to Save A Planet: Gimlet Media
+						</h3>
+						<h5 className='book-section-description'>
 							Does climate change freak you out? Want to know what we,
 							collectively, can do about it? Us, too. How to Save a Planet is a
 							podcast that asks the big questions: What do we need to do to
@@ -151,8 +161,8 @@ const Resources = () => {
 						</a>
 					</div>
 					<div className='podcast-description'>
-						<h3>The Energy Gang: Greentech Media</h3>
-						<h5>
+						<h3 className='podcast-title'>The Energy Gang: Greentech Media</h3>
+						<h5 className='book-section-description'>
 							Looking to understand the fast-changing world of energy? This
 							isn't your ordinary energy business show. Every week, they debate
 							and discuss the latest trends in energy, cleantech, renewables,

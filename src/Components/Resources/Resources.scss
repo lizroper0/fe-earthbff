@@ -24,20 +24,25 @@ $blue: #9cd7f3;
 	justify-items: center;
 	padding-bottom: 5rem;
 	text-align: left;
-	
 }
 
+.book-section-container {
+	margin: 0 0 10px 0;
+}
 
-.book-description{
+.book-description {
 	align-self: center;
+	justify-items: center;
 }
 
-.book-section-container img{
-	width:200px;
+.book-section-container img {
+	width: 200px;
 	height: 300px;
 }
 
-
+.book-section-title {
+	margin: 0 0 10px 0;
+}
 .title-container {
 	margin: 50px;
 }
@@ -53,7 +58,7 @@ $blue: #9cd7f3;
 	margin-bottom: 20px;
 }
 
-.documentary-section{
+.documentary-section {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -65,4 +70,14 @@ $blue: #9cd7f3;
 
 .podcast-description {
 	text-align: left;
+	margin: 0 0 15px 0;
+}
+
+.book-section-description {
+font-family: 'Source Sans Pro', sans-serif;
+margin: 0 0 10px 0;
+}
+
+.podcast-title {
+	margin: 0 0 15px 0;
 }

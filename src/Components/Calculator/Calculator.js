@@ -180,7 +180,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 						<ul>
 							<li>
 								Do an energy audit of your home. This will show how you use or
-								waste energy and help identify ways to be more energy efficient
+								waste energy and help identify ways to be more energy efficient.
 							</li>
 							<li>
 								Switch lights off when you leave the room and unplug your
@@ -195,7 +195,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 						<ul>
 							<li>
 								Drive less. Walk, take public transportation, carpool, rideshare
-								or bike to your destination when possible
+								or bike to your destination when possible.
 							</li>
 							<li>
 								If you can’t avoid flying, offset the carbon emissions of your
