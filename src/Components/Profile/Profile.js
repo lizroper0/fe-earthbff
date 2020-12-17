@@ -53,10 +53,10 @@ const Profile = ({ loggedIn }) => {
 				className='no-profile-container'>
 				<h1>Aww shucks, you aren't logged in. </h1>
 				<h1> </h1>
-				<button className='profile-button'>
-					{' '}
-					<Link to='/login'>Click Here to Login</Link>
+				<Link to='/login'>
+					<button className='profile-button'> Click Here to Login
 				</button>
+				</Link>
 			</div>
 		</div>
 	);
