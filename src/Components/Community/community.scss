@@ -103,6 +103,13 @@ $blue: #9cd7f3;
 
 }
 
+ a {
+	 &:hover {
+        text-decoration: none;
+        color: white;
+	}
+} 
+
 .login-post-button a {
     color: white;
 
