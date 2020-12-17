@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import './calculator.scss';
-import axios from 'axios';
 
 const calculatorUrl = 'https://earthbff-backend.herokuapp.com/questions/';
 
@@ -13,11 +12,6 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 	const [showStart, setShowStart] = useState(true);
 	const [showQuestions, setShowQuestions] = useState(false);
 	const [showResults, setShowResults] = useState(false);
-
-	const userCarbonOuput = {
-		carbon_output: carbonFootprint,
-		owner: parseInt(localStorage.getItem('id')),
-	};
 
 	useEffect(() => {
 		fetch(calculatorUrl)
@@ -42,15 +36,10 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 
 	const handleSaveScore = (event) => {
 		event.preventDefault();
-		axios({
-			method: 'POST',
-			url: 'https://earthbff-backend.herokuapp.com/results/',
-			headers: { Authorization: `Token ${localStorage.token}` },
-			data: userCarbonOuput,
-		}).then((res) => {
-			history.push('/profile');
-		});
-		
+		localStorage.setItem('carbonOutput', carbonFootprint)
+		history.push('/profile');	
+
+
 	}
 
 	const handleStartOver = () => {
