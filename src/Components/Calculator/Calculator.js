@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import './calculator.scss';
 import axios from 'axios';
@@ -6,6 +7,7 @@ import axios from 'axios';
 const calculatorUrl = 'https://earthbff-backend.herokuapp.com/questions/';
 
 const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
+	const history = useHistory();
 	const [calculator, setCalculator] = useState();
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showStart, setShowStart] = useState(true);
@@ -46,9 +48,10 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: userCarbonOuput,
 		}).then((res) => {
-			console.log(res);
+			history.push('/profile');
 		});
-	};
+		
+	}
 
 	const handleStartOver = () => {
 		setShowStart(false);
@@ -255,5 +258,6 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 		</div>
 	);
 };
+
 
 export default Calculator;

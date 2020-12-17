@@ -5,6 +5,7 @@ import NumberFormat from 'react-number-format';
 import './profile.scss';
 
 const Profile = ({ loggedIn }) => {
+	
 	const [carbonFootprint, setCarbonFootprint] = useState();
 	const [footprintTimestamp, setfootprintTimestamp] = useState();
 	const owner = {
@@ -19,7 +20,6 @@ const Profile = ({ loggedIn }) => {
 			data: owner,
 		})
 			.then((res) => {
-				console.log(res.data[0]);
 				setCarbonFootprint(res.data[0].carbon_output);
 				setfootprintTimestamp(res.data[0].timestamp);
 			})
