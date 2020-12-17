@@ -1,3 +1,7 @@
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
 /* Make the root element at least as big as the page. */
 html,
 body,
@@ -21,6 +25,5 @@ main {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Montserrat', sans-serif;
-	background-color: #FFFFF0;
+	background-color: $blue;
 }

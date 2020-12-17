@@ -1,5 +1,37 @@
 @import '~bootstrap/scss/bootstrap';
 
+//Colors
+$green: #6fad71;
+$blue: #9cd7f3;
+
+/* Make the root element at least as big as the page. */
+html,
+body,
+#root {
+	height: 100%;
+}
+/* 
+Give some padding to the header, main and footer elements
+if they are direct children of the #root element.
+*/
+
+#root > header,
+#root > main,
+#root > footer {
+	padding: 1rem;
+}
+
+main {
+	padding: 1rem;
+}
+body {
+	margin: 0;
+	padding: 0;
+	
+}
+
+
+
 //Styling for the Footer
 footer {
 	color: gray;

@@ -6,6 +6,7 @@ import './login.scss';
 import { Link, Redirect } from 'react-router-dom';
 
 const Login = ({ loggedIn, setLoggedIn }) => {
+	const [error, setError] = useState(false);
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
@@ -18,9 +19,14 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 			url: 'https://earthbff-backend.herokuapp.com/token/login',
 			data: user,
 		}).then((res) => {
-			localStorage.setItem('username', user.email);
+			console.log(res.data);
 			localStorage.setItem('token', res.data.auth_token);
 			setLoggedIn(true);
+			localStorage.setItem('username', user.email);
+		}).catch((err) => {
+			let errors = []
+			errors.push(err)
+			setError(true)
 		});
 	};
 
@@ -32,7 +38,6 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: username,
 		}).then((res) => {
-			console.log(res.data.id);
 			localStorage.setItem('id', res.data.id);
 		});
 	};
@@ -75,11 +80,13 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 							Log In
 						</button>
 					</form>
-
+					<p className='error-message' style={{ display: error ? 'block' : 'none' }}>
+						{' '}
+						Invalid Credentials! Try Again.
+					</p>
 					<p>
 						{' '}
-						New to EarthBFF? Sign Up {' '}
-						<Link to='/signup'>Here.</Link>
+						New to EarthBFF? Sign Up <Link to='/signup'>Here.</Link>
 					</p>
 				</div>
 			</div>
