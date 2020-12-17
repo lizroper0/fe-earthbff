@@ -34,13 +34,12 @@ const Community = ({ loggedIn }) => {
 					<Link to='/communityguidelines'>community guidelines</Link> will be
 					removed.
 				</h4>
-				<Link to='/post'>
-					<button
-						className='create-post-button'
-						style={{ display: loggedIn ? 'block' : 'none' }}>
-						Create a Post
-					</button>
-				</Link>
+
+				<button
+					className='create-post-button'
+					style={{ display: loggedIn ? 'block' : 'none' }}>
+					<Link to='/post'>Create a Post</Link>{' '}
+				</button>
 				<button
 					className='login-post-button'
 					style={{ display: !loggedIn ? 'block' : 'none' }}>

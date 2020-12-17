@@ -79,7 +79,7 @@ $blue: #9cd7f3;
 }
 
 .create-post-button {
-    box-sizing: border-box;
+   box-sizing: border-box;
 	width: 300px;
 	appearance: none;
 	background-color: $green;
@@ -103,6 +103,7 @@ $blue: #9cd7f3;
 
 }
 
+
  a {
 	 &:hover {
         text-decoration: none;
@@ -111,6 +112,16 @@ $blue: #9cd7f3;
 } 
 
 .login-post-button a {
+    color: white;
+
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+	}
+}
+
+.create-post-button a {
     color: white;
 
 
