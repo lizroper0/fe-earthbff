@@ -99,6 +99,22 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 					which is just a way of converting all greenhouse gases to be measured
 					in C02.
 				</h5>
+				<p>
+					Note: This calculator uses the guidance and methodology from
+					<a
+						href='https://www3.epa.gov/carbon-footprint-calculator/'
+						target='_blank'>
+						{' '}
+						here{' '}
+					</a>
+					and
+					<a
+						href='http://shrinkthatfootprint.com/food-carbon-footprint-diet'
+						target='_blank'>
+						{' '}
+						here.
+					</a>
+				</p>
 				<h5>Are you ready to get started?</h5>
 
 				<button className='start-button' onClick={() => handleStart()}>
@@ -119,22 +135,22 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 					lbs CO2e/year
 				</h5>
 				<div className='calculator-area'>
-
-
-				<div className='question-text'>{calculator[currentQuestion].label}</div>
-				<div className='question-description'>
-					{calculator[currentQuestion].description}
-				</div>
-				<div className='response-section'>
-					{calculator[currentQuestion].responses.map((response) => (
-						<button
-							className='response-button'
-							onClick={() => handleResponseClick(response.carbon_output)}
-							key={response.carbon_output}>
-							{response.label}
-						</button>
-					))}
-				</div>
+					<div className='question-text'>
+						{calculator[currentQuestion].label}
+					</div>
+					<div className='question-description'>
+						{calculator[currentQuestion].description}
+					</div>
+					<div className='response-section'>
+						{calculator[currentQuestion].responses.map((response) => (
+							<button
+								className='response-button'
+								onClick={() => handleResponseClick(response.carbon_output)}
+								key={response.carbon_output}>
+								{response.label}
+							</button>
+						))}
+					</div>
 				</div>
 			</div>
 
@@ -142,7 +158,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 				className='results-container'
 				style={{ display: showResults ? 'block' : 'none' }}>
 				<h1>Results</h1>
-				<h5>
+				<h3>
 					Carbon Footprint: <br></br>
 					<NumberFormat
 						value={carbonFootprint}
@@ -150,11 +166,79 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 						thousandSeparator={true}
 					/>{' '}
 					lbs CO2e/year
-				</h5>
-				<h5>
-					The average person has this carbon footprint, that his is what you
-					have...
-				</h5>
+				</h3>
+				<div className='results-details'>
+					<h5>
+						According to the EPA, the average American has a carbon footprint of
+						19,702 lbs CO2e per year. How do you compare?
+					</h5>
+					<div className='suggestions'>
+						<h4>Here are some ways to improve your carbon footprint:</h4>
+						<h5>Home</h5>
+						<ul>
+							<li>
+								Do an energy audit of your home. This will show how you use or
+								waste energy and help identify ways to be more energy efficient
+							</li>
+							<li>
+								Switch lights off when you leave the room and unplug your
+								electronic devices when they are not in use.
+							</li>
+							<li>
+								Turn your water heater down to 120˚F. This can save about 550
+								pounds of CO2 a year.
+							</li>
+						</ul>
+						<h5>Transportation</h5>
+						<ul>
+							<li>
+								Drive less. Walk, take public transportation, carpool, rideshare
+								or bike to your destination when possible
+							</li>
+							<li>
+								If you can’t avoid flying, offset the carbon emissions of your
+								travel.
+							</li>
+						</ul>
+						<h5>Waste</h5>
+						<ul>
+							<li>
+								Don’t buy fast fashion. Trendy, cheap items that go out of style
+								quickly get dumped in landfills where they produce methane as
+								they decompose.
+							</li>
+							<li>
+								Buy less stuff! And buy used or recycled items whenever
+								possible.
+							</li>
+							<li>Compost your food waste if possible.</li>
+						</ul>
+						<h5>Food</h5>
+						<ul>
+							<li>
+								Eat low on the food chain. This means eating mostly fruits,
+								veggies, grains, and beans.
+							</li>
+							<li>
+								Buy foodstuffs in bulk when possible using your own reusable
+								container.
+							</li>
+							<li>
+								Choose organic and local foods that are in season. Transporting
+								food from far away, whether by truck, ship, rail or plane, uses
+								fossil fuels for fuel and for cooling to keep foods in transit
+								from spoiling.
+							</li>
+						</ul>
+						Source:{' '}
+						<a
+							href='https://blogs.ei.columbia.edu/2018/12/27/35-ways-reduce-carbon-footprint/'
+							target='_blank'>
+							{' '}
+							Earth Institue | Columbia University
+						</a>
+					</div>
+				</div>
 				<button
 					className='results-button'
 					style={{ display: loggedIn ? 'block' : 'none' }}

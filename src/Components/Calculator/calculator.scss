@@ -128,6 +128,14 @@ calculator-page-container {
 .results-container {
 	margin-top: 100px;
 	text-align: center;
+	margin-top: 100px;
+	text-align: center;
+	max-width: 900px;
+	margin: 100px auto;
+	border-color: black;
+	border: solid;
+	border-radius: 15px;
+	padding: 10px;
 }
 
 .results-button {
@@ -152,4 +160,31 @@ calculator-page-container {
 		color: #fff;
 		outline: 0;
 	}
+}
+
+.results-container h1, h3, h5{
+	font-family: 'Chelsea Market', cursive;
+	margin: 25px ;
+}
+
+.results-details {
+	width:800px;
+	text-align: justify;
+
+
+}
+
+.results-container h4{
+	font-family: 'Chelsea Market', cursive;
+	margin: 25px ;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.suggestions {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggestions h4 {
+	font-family: 'Chelsea Market', cursive;
 }
