@@ -13,6 +13,7 @@ import Community from './Components/Community/Community'
 import Profile from './Components/Profile/Profile'
 import NotFound from './Components/Not Found/NotFound'
 import Post from './Components/Post/Post'
+import CommunityGuidlines from './Components/CommunityGuidlines/CommunityGuidlines'
 
 function App() {
 	const [carbonFootprint, setCarbonFootprint] = useState(0);
@@ -83,6 +84,7 @@ function App() {
 						path='/post'
 						render={() => <Post loggedIn={loggedIn} />}
 					/>
+					<Route exact path='/communityguidelines' render={() => <CommunityGuidlines />} />
 					<Route render={() => <NotFound />} />
 				</Switch>
 			</main>

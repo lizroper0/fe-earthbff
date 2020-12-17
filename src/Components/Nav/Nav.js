@@ -12,9 +12,14 @@ const Nav = ({ loggedIn, handleLogout }) => {
 			<nav>
 				<Link to='/calculator'>Calculator</Link>
 				<Link to='/community'>Community</Link>
+				<Link to='/resources'>Resources</Link>
 
 				{!loggedIn && <Link to='/login'>Login</Link>}
-				{loggedIn && <button className='nav-button' onClick={handleLogout}>Logout</button>}
+				{loggedIn && (
+					<button className='nav-button' onClick={handleLogout}>
+						Logout
+					</button>
+				)}
 				<Link to='/profile'>
 					<img className='profile-img' src={ProfileLogo} alt='EarthBFFLogo' />
 				</Link>

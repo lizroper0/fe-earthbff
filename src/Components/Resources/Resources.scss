@@ -4,67 +4,65 @@ $blue: #9cd7f3;
 
 .container {
 	max-width: 1200px;
+	text-align: center;
+}
+
+.container h2 {
+	margin-bottom: 20px;
+	font-family: 'Chelsea Market', cursive;
 }
 
 .resources {
-	margin: 100px 0 ;
-	
-	// display: flex;
-	// flex-direction: row;
-	// justify-content: center;
+	margin: 100px 0;
 }
 
+.book-section-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	align-content: center;
+	justify-items: center;
+	padding-bottom: 5rem;
+	text-align: left;
+	
+}
+
+
+.book-description{
+	align-self: center;
+}
+
+.book-section-container img{
+	width:200px;
+	height: 300px;
+}
+
+
 .title-container {
-	margin: 50px
+	margin: 50px;
 }
 .resources h1 {
 	display: block;
-    text-align: center;
-    font-family: 'Chelsea Market', cursive;
+	text-align: center;
+	font-family: 'Chelsea Market', cursive;
 }
 
 .resources-video {
 	display: flex;
 	justify-content: center;
-	
+	margin-bottom: 20px;
 }
 
-.section-container h2 {
-	max-width: 1200px;
-	font-family: 'Chelsea Market', cursive;
-	margin-bottom: 10px;
+.documentary-section{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
+.react-player {
+	margin-bottom: 20px;
+}
 
-/* Add Media Queries Here */
-@media only screen and (max-width: 700px) {
-	body {
-		font-size: 1em;
-	}
-
-	.home {
-		display: grid;
-		grid-template-columns: 1fr;
-		padding: 1em;
-		grid-row-gap: 100px;
-	}
-
-	.tag-line {
-		font-size: 20px;
-		align-self: center;
-		margin: 0;
-	}
-
-	.home-image img {
-		object-fit: scale-down;
-		margin: auto;
-	}
-
-	.home-button {
-		width: fit-content;
-		font-size: 0.5rem;
-		line-height: 1;
-		margin: 5px;
-		padding: 1.2em 2.8em;
-	}
+.podcast-description {
+	text-align: left;
 }
