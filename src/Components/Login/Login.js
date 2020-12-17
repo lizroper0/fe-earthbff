@@ -49,7 +49,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 
 	if (loggedIn) {
 		getPrimaryKey();
-		return <Redirect to='/home' />;
+		return <Redirect to='/' />;
 	}
 
 	return (

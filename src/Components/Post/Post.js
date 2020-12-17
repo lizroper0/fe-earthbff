@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './post.scss';
 
-const Post = () => {
+const Post = ({ loggedIn }) => {
 	const history = useHistory();
 	const [newPost, setNewPost] = useState({
 		title: '',
@@ -18,7 +18,7 @@ const Post = () => {
 			url: 'https://earthbff-backend.herokuapp.com/posts/',
 			headers: { Authorization: `Token ${localStorage.token}` },
 			data: newPost,
-		})
+		});
 		history.push('/community');
 	};
 
@@ -29,7 +29,15 @@ const Post = () => {
 
 	return (
 		<div className='post-page'>
-			<div className='post-form-container'>
+			<div className='post-error' style={{ display: !loggedIn ? 'block' : 'none' }}>
+				<h1>You Need to Login to Create a Post!</h1>
+				<Link to='/login'>Login</Link>
+				<Link to='/community'>Back</Link>
+			</div>
+			<div
+				className='post-form-container'
+				style={{ display: loggedIn ? 'block' : 'none' }}>
+				<h1>Create a Post</h1>
 				<form className='post-form' onSubmit={handleSubmit}>
 					<label htmlFor='title'>
 						<b>Title</b>
