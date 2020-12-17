@@ -103,14 +103,16 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 					Note: This calculator uses the guidance and methodology from
 					<a
 						href='https://www3.epa.gov/carbon-footprint-calculator/'
-						target='_blank'>
+						target='_blank'
+						rel='noreferrer'>
 						{' '}
 						here{' '}
 					</a>
 					and
 					<a
 						href='http://shrinkthatfootprint.com/food-carbon-footprint-diet'
-						target='_blank'>
+						target='_blank'
+						rel='noreferrer'>
 						{' '}
 						here.
 					</a>
@@ -233,7 +235,8 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 						Source:{' '}
 						<a
 							href='https://blogs.ei.columbia.edu/2018/12/27/35-ways-reduce-carbon-footprint/'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							{' '}
 							Earth Institue | Columbia University
 						</a>

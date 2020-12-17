@@ -53,7 +53,6 @@ const Community = ({ loggedIn }) => {
 						<div className='post-container' key={post.id}>
 							<h5>{post.title}</h5>
 							<h6>{post.body}</h6>
-							<p> {post.timestamp}</p>
 						</div>
 					);
 				})}

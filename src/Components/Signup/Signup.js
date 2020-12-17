@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './signup.scss';
 
 import axios from 'axios';
 
 const Signup = () => {
+	const [error, setError] = useState(false);
+	const history = useHistory();
 	const [newUser, setNewUser] = useState({
 		email: '',
 		username: '',
@@ -18,23 +20,21 @@ const Signup = () => {
 			method: 'POST',
 			url: 'https://earthbff-backend.herokuapp.com/users/',
 			data: newUser,
-		}).then((res) => {
-			console.log(res);
-		});
+		})
+			.then((res) => {
+				history.push('/login');
+			})
+			.catch((err) => {
+				let errors = [];
+				errors.push(err);
+				setError(true);
+			});
 	};
 
 	const handleChange = (event) => {
 		event.preventDefault();
 		setNewUser({ ...newUser, [event.target.name]: event.target.value });
 	};
-
-	// const checkPassword = (event) => {
-
-	// }
-
-	// const checkEmail = (event) => {
-
-	// };
 
 
 	return (
@@ -50,7 +50,8 @@ const Signup = () => {
 							name='email'
 							value={(newUser.user, newUser.email)}
 							onChange={handleChange}
-							placeholder='user@example.com'></input>
+							placeholder='user@example.com'
+							required></input>
 						<label htmlFor='username'>
 							<b>Confirm Email</b>
 						</label>
@@ -59,7 +60,8 @@ const Signup = () => {
 							name='username'
 							value={newUser.username}
 							onChange={handleChange}
-							placeholder='Re-Type Email'></input>
+							placeholder='Re-Type Email'
+							required></input>
 						<label htmlFor='password'>
 							<b>Password</b>
 						</label>
@@ -68,7 +70,8 @@ const Signup = () => {
 							name='password'
 							value={newUser.password}
 							onChange={handleChange}
-							placeholder='Password'></input>
+							placeholder='Password'
+							required></input>
 						<label htmlFor='re_password'>
 							<b>Re-Type Password</b>
 						</label>
@@ -77,17 +80,24 @@ const Signup = () => {
 							name='re_password'
 							value={newUser.re_password}
 							onChange={handleChange}
-							placeholder='Re-Type Password'></input>
+							placeholder='Re-Type Password'
+							></input>
 
 						<button className='signup-button' type='submit'>
 							Sign Up
 						</button>
 					</form>
+					<p
+						className='error-message'
+						style={{ display: error ? 'block' : 'none' }}>
+						{' '}
+						Invalid Credentials! Try Again.
+					</p>
 
 					<p>
 						{' '}
-						Already have an account? Click to <Link to='/login'>Here </Link>
-						to Login.
+						Already have an account? Click <Link to='/login'>here</Link>
+						.
 					</p>
 				</div>
 			</div>

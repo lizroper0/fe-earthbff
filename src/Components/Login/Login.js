@@ -19,10 +19,10 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 			url: 'https://earthbff-backend.herokuapp.com/token/login',
 			data: user,
 		}).then((res) => {
-			console.log(res.data);
 			localStorage.setItem('token', res.data.auth_token);
 			setLoggedIn(true);
 			localStorage.setItem('username', user.email);
+
 		}).catch((err) => {
 			let errors = []
 			errors.push(err)
@@ -61,7 +61,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 							<b>Email</b>
 						</label>
 						<input
-							type='email'
+							type='text'
 							name='email'
 							value={user.email}
 							onChange={handleChange}

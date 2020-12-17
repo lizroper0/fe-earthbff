@@ -37,7 +37,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://www.amazon.com/We-Are-Weather-Saving-Breakfast/dp/0374280002'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Click Here to Buy
 						</a>
 					</div>
@@ -57,7 +58,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://www.amazon.com/Sixth-Extinction-Unnatural-History-ebook/dp/B00EGJE4G2'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Click Here to Buy
 						</a>
 					</div>
@@ -79,7 +81,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://www.amazon.com/Uninhabitable-Earth-Life-After-Warming/dp/0525576703'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Click Here to Buy
 						</a>
 					</div>
@@ -114,7 +117,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://podcasts.apple.com/us/podcast/warm-regards/id1127571287'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Listen Here
 						</a>
 					</div>
@@ -126,7 +130,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://podcasts.apple.com/us/podcast/climate-cast/id628455920'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Listen Here
 						</a>
 					</div>
@@ -140,7 +145,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://podcasts.apple.com/us/podcast/how-to-save-a-planet/id1525955817'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Listen Here
 						</a>
 					</div>
@@ -154,7 +160,8 @@ const Resources = () => {
 						</h5>
 						<a
 							href='https://podcasts.apple.com/us/podcast/the-energy-gang/id663379413'
-							target='_blank'>
+							target='_blank'
+							rel='noreferrer'>
 							Listen Here
 						</a>
 					</div>
