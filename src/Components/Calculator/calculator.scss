@@ -2,16 +2,26 @@
 $green: #6fad71;
 $blue: #9cd7f3;
 
+calculator-page-container {
+	max-width: 800px;
+}
+
 //Start Page
 .start-container {
 	margin-top: 100px;
 	text-align: center;
+	max-width: 800px;
+	margin: 100px auto;
+	border-color: black;
+	border: solid;
+	border-radius: 15px;
 }
 
 .start-container h1 {
 	margin: 50px;
 	text-align: center;
 	font-family: 'Chelsea Market', cursive;
+	
 }
 
 .start-container h5 {
@@ -48,15 +58,20 @@ $blue: #9cd7f3;
 
 .calculator-container {
 	margin-top: 100px;
+	
 }
 
 .calculator-container h1 {
 	text-align: center;
+	
 }
+
 
 .calculator-container h5 {
 	text-align: right;
 	margin: 0 100px;
+	font-family: 'Chelsea Market', cursive;
+
 }
 
 .question-text {
@@ -65,6 +80,7 @@ $blue: #9cd7f3;
 	max-width: 500px;
 	margin: 40px auto;
 	font-size: 20px;
+	font-family: 'Chelsea Market', cursive;
 }
 
 .question-description {

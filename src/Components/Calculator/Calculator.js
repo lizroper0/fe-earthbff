@@ -73,7 +73,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 	};
 
 	return (
-		<div>
+		<div className='calculator-page-container'>
 			<div
 				className='start-container'
 				style={{ display: showStart ? 'block' : 'none' }}>
@@ -118,6 +118,9 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 					/>{' '}
 					lbs CO2e/year
 				</h5>
+				<div className='calculator-area'>
+
+
 				<div className='question-text'>{calculator[currentQuestion].label}</div>
 				<div className='question-description'>
 					{calculator[currentQuestion].description}
@@ -131,6 +134,7 @@ const Calculator = ({ carbonFootprint, setCarbonFootprint, loggedIn }) => {
 							{response.label}
 						</button>
 					))}
+				</div>
 				</div>
 			</div>
 
