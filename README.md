@@ -4,6 +4,8 @@ We only have one Earth, so let’s treat it like our best friend!
 
 EarthBFF is a carbon footprint calculator that educates the user on their carbon footprint and allows them to correct behavior in order to live a more environmentally friendly life. It also is a place where people can learn about climate change from our extensive resources and meet like-minded people by posting on our community bulletin board.
 
+Watch the walkthrough here: https://youtu.be/PWuywMZLV74
+
 ## Features
 - Signup/Login/Logout Functionality
 - Carbon Footprint Calculator
